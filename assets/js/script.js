@@ -51,3 +51,13 @@ request.post(authOptions, function(error, response, body) {
     var token = body.access_token;
   }
 });
+
+
+//user searches for a city
+    //city search api - amadeus
+    //use data.length to create # of elements(buttons)
+    //get the value of data[i].name + ", " + data[i].stateCode + ", " + data[i].countryCode
+    //add eventListener on city option buttons 
+    //on 'click' use object to get the selected city coordinates (make a variable for this value)
+    //use localStorage to setItem for the coordinates variable
+    //redirect the user to the city-info.html
