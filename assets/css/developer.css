@@ -1,0 +1,87 @@
+.cards div {
+    background-color: whitesmoke;
+    box-shadow: 4px 8px 8px 2px #c18c5d;
+}
+
+/*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
+@media screen and (max-width: 780px) {
+
+    /*----------MAIN BODY----------*/
+    .cards {
+        outline: red dashed 3px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    /*----------DEV CARDS----------*/
+    .cards div {
+        outline: blue dashed 3px;
+
+        margin: 10px;
+        border-radius: 25px;
+    }
+
+    /*----------NAME----------*/
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    /*----------IMAGE----------*/
+    .profile-img{
+        width: 250px;
+        height: auto;
+        border: #c18c5d solid 5px;
+        border-radius: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*---------------ARTICLE---------------*/
+    h2 {
+        font-size: 30px;
+        margin: 10px;
+    }
+
+    /*----------CONTACT----------*/
+    article ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+    article ul li {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .linkedin,
+    .github,
+    .portfolio,
+    .email {
+        width: auto;
+        height: 35px;
+    }
+
+    article a {
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    /*----------ABOUT & CONTRIBUTIONS----------*/
+    article p {
+        font-size: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+        line-height: 1.5rem;
+    }
+
+}
+
+/*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
+@media screen and (min-width: 781px) and (max-width: 1366px) {
+
+}
