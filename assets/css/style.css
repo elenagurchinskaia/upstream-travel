@@ -1,0 +1,13 @@
+/* Header/h1 font family - Quicksand */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap'); 
+/* Body font family - Hind */
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Josefin+Slab&family=Quicksand:wght@700&display=swap');
+/* sub head font family - Josefin Slab */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Quicksand:wght@700&display=swap');
+
+body {
+    font-family: ; 
+}
+.h1 {
+   font-family: ; 
+}
