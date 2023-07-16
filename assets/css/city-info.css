@@ -136,7 +136,7 @@ li {
 
 /*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
-  .nav-bar {
+  .nav-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -224,6 +224,94 @@ li {
 
   article ul li {
     margin: 15px;
+    list-style: none;
+  }
+}
+
+/*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
+@media screen and (min-width: 781px) and (max-width: 1366px) {
+  h1 {
+    font-size: 70px;
+  }
+
+  /*--------------------MAP & STATS--------------------*/
+  .safety-and-map {
+    box-shadow: 4px 8px 8px 2px var(--dark);
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  /*----------MAP----------*/
+  .safety-and-map img {
+    border: solid var(--dark) 3px;
+    width: 100%;
+    height: auto;
+  }
+
+  /*----------STATS----------*/
+  .safety-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 0 0 25px 25px;
+  }
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+
+  .safety-stats ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: auto;
+  }
+
+  .safety-stats ul li {
+    font-family: 'Hind', sans-serif;
+    font-size: 30px;
+    margin: 30px;
+  }
+
+  /*--------------------RECOMMENDATIONS--------------------*/
+  .recommendations {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*----------CARDS----------*/
+  .recommendations article {
+    margin: 20px
+  }
+
+  /*----------HEADINGS----------*/
+  h3 {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /*----------OPTIONS----------*/
+  article ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  article ul li {
+    margin: 25px;
     list-style: none;
   }
 }
