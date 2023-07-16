@@ -107,7 +107,7 @@ article p {
 
     /*----------NAME----------*/
     h1 {
-
+        padding: 5px;
         font-size: 50px;
         text-align: center;
     }
@@ -127,6 +127,10 @@ article p {
     h2 {
         font-size: 30px;
         margin: 10px;
+    }
+
+    article {
+        padding: 5px;
     }
 
     /*----------CONTACT----------*/
