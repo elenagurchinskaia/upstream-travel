@@ -14,18 +14,20 @@ h2 {
   font-size: 20px;
 }
 
+/* safety and map section */
 .safety-and-map {
   display: flex;
   flex-direction: row;
 }
 
+/* food */
 .food {
   border: 1px dashed black;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
 }
-
+/* places of interest */
 .places-interest {
   border: 1px dashed black;
   border-radius: 5px;
@@ -33,6 +35,7 @@ h2 {
   flex-direction: row;
 }
 
+/* excursions */
 .excursions {
   border: 1px dashed black;
   border-radius: 5px;
@@ -43,6 +46,8 @@ h2 {
 .footer-slogan {
   text-align: center;
 }
+
+/* media query for smaller devices */
 
 @media screen and (max-width: 780px) {
   .nav-bar {
