@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* titles */
 h1 {
   font-size: 30px;
   text-align: center;
@@ -13,25 +14,56 @@ h2 {
   font-size: 20px;
 }
 
+/* safety and map section */
 .safety-and-map {
   display: flex;
   flex-direction: row;
 }
-@media screen and (max-width: 1366px) {
+
+/* food */
+.food {
+  border: 1px dashed black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+/* places of interest */
+.places-interest {
+  border: 1px dashed black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* excursions */
+.excursions {
+  border: 1px dashed black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-slogan {
+  text-align: center;
+}
+
+/* media query for smaller devices */
+
+@media screen and (max-width: 780px) {
   .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  h1 {
+  /* h1 {
     font-size: 30px;
     text-align: center;
   }
 
   h2 {
     font-size: 20px;
-  }
+  } */
 
   .safety-and-map {
     display: flex;
