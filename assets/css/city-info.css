@@ -12,12 +12,39 @@ h1 {
 
 h2 {
   font-size: 20px;
+  border: 1px dashed black;
+  justify-content: flex-start;
+  /* padding-left: 20px; */
+}
+/* title */
+.city-name {
+  border: 1px dashed black;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 /* safety and map section */
 .safety-and-map {
   display: flex;
   flex-direction: row;
+  border: 1px dashed black;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.safety-stats {
+  border: 1px dashed black;
+}
+
+li {
+  /* border: 1px dashed black; */
+  /* padding: 20px; */
+  /* text-align: center;
+  padding-right: 20px; */
+}
+
+.map-box {
+  border: 1px dashed black;
 }
 
 /* food */
@@ -26,13 +53,47 @@ h2 {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  /* padding: 40px; */
+  margin-right: 20px;
+  margin-left: 20px;
+  /* height: 150px; */
 }
+
+.food-cont {
+  border: 1px dashed black;
+
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-start; */
+}
+
+.food-item {
+  border: 1px dashed black;
+  width: 15%;
+  justify-content: space-around;
+  padding: 5px;
+}
+
 /* places of interest */
 .places-interest {
   border: 1px dashed black;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  /* padding: 40px; */
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.places-item {
+  border: 1px dashed black;
+  display: flex;
+
+  width: 15%;
+  justify-content: space-around;
+  padding: 5px;
 }
 
 /* excursions */
@@ -41,10 +102,22 @@ h2 {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  /* padding: 40px; */
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.excursions-item {
+  border: 1px dashed black;
+  width: 15%;
+  justify-content: space-around;
+  padding: 5px;
 }
 
 .footer-slogan {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 /* media query for smaller devices */
@@ -65,8 +138,41 @@ h2 {
     font-size: 20px;
   } */
 
-  .safety-and-map {
+  /* .safety-and-map { */
+  /* display: flex; */
+  /* flex-direction: columns; */
+  /* } */
+
+  /* .food-item { */
+  /* width: 15%;
+  justify-content: space-around;
+  /* margin: 5px; */
+  /* padding: 5px; */
+  /* } */
+
+  /* .food {
+    border: 1px dashed black;
+    border-radius: 5px;
+    display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+  /* } */
+
+  /* places of interest */
+  .places-interest {
+    border: 1px dashed black;
+    border-radius: 5px;
     display: flex;
-    /* flex-direction: columns; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+  }
+
+  /* excursions */
+  .excursions {
+    border: 1px dashed black;
+    border-radius: 5px;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
   }
 }
