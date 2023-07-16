@@ -1,111 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>City Info</title>
-    <!--Hind Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-        rel="stylesheet">
-    <!--Josefin Slab Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-        rel="stylesheet">
-    <!--Quicksand Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-        rel="stylesheet">
-         <!--Materialize Library-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="../css/city-info.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Upstream Travel</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">HOME</a></li>
-          <li><a href="badges.html">ABOUT</a></li>
-          <li><a href="collapsible.html">DEVELOPERS</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <h1 class="city-name">City Name</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>City Info</title>
+  <!--Hind Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Josefin Slab Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Quicksand Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Materialize Library-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="../css/city-info.css" />
+</head>
 
-    <section class="safety-and-map row">
-      <article class="safety-stats col s4">
-        <h2>SAFETY STATS</h2>
-        <p id="safety-stats-list">
-          <p>Women Safety</p>
-          <p>LGBTQ Safety</p>
-          <p>Political Freedom</p>
-          <p>Day/Night Time Safety</p>
-          <p>Theft</p>
-          <p>Health and Medical</p>
-          <p>Physical Harm</p>
-        </p>
-      </article>
-      <img src="https://northstar-pres.com/wp-content/uploads/2015/10/google-map-placeholder.png" class="map-box col s8"></img>
+<body>
+  <!--------------------NAV BAR-------------------->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Upstream Travel</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">HOME</a></li>
+        <li><a href="badges.html">ABOUT</a></li>
+        <li><a href="collapsible.html">DEVELOPERS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="city-name">City Name</h1>
+  <!--------------------MAP & STATS-------------------->
+  <section class="safety-and-map">
+    <!----------MAP---------->
+    <img src="../images/placeholder-map.jpeg" alt="placeholder map"></img>
+    <!---------STATS--------->
+    <section class="safety-stats">
+      <h2>SAFETY STATS</h2>
+      <ul id="safety-stats-list">
+        <li>Women</li>
+        <li>LGBTQ</li>
+        <li>Political</li>
+        <li>Day/Night</li>
+        <li>Theft</li>
+        <li>Health</li>
+        <li>Physical</li>
+      </ul>
     </section>
+  </section>
 
-    <section class="food row">
-        <article class="food-cont s3">
-      <h2>FOOD</h2></article>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="food-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="food-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="food-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="food-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="food-item responsive-img"></img>
-    
-    </section>
+  <!--------------------RECOMMENDATIONS-------------------->
+  <section class="recommendations">
+    <!---------FOOD--------->
+    <article class="food">
+      <header>
+        <h3>FOOD</h3>
+      </header>
+      <ul>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+      </ul>
+    </article>
 
-    <section class="places-interest row">
-      <h2>PLACES OF INTEREST</h2>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="places-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="places-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="places-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="places-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="places-item responsive-img"></img>
-    </section>
+    <!---------PLACES OF INTEREST--------->
+    <article class="places-interest">
+      <header>
+        <h3>PLACES OF INTEREST</h3>
+      </header>
+      <ul>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+      </ul>
+    </article>
 
-    <section class="excursions row">
-      <h2>EXCURSIONS</h2>
-      <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="excursions-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="excursions-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="excursions-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="excursions-item responsive-img"></img>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" alt="write a description"
-        class="excursions-item responsive-img"></img>
-    </section>
+    <!---------EXCURSIONS--------->
+    <article class="excursions">
+      <header>
+        <h3>EXCURSIONS</h3>
+      </header>
+      <ul>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+      </ul>
+    </article>
+  </section>
+  <!--------------------FOOTER-------------------->
+  <footer class="footer-slogan">FOLLOW YOUR DREAMS</footer>
 
-    <footer class="footer-slogan">FOLLOW YOUR DREAMS</footer>
+  <div id="#amadeus-api"></div>
+  <script src="../js/city-info.js"></script>
+</body>
 
-    <div id="#amadeus-api"></div>
-    <script src="../js/city-info.js"></script>
-  </body>
 </html>

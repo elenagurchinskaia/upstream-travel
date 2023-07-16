@@ -18,26 +18,32 @@
 
 /* titles */
 h1 {
-  font-size: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 70px;
   text-align: center;
 }
 
 h2 {
   font-size: 20px;
-  font-family: "Quicksand", sans-serif;
-  border: 1px dashed black;
-  font-weight: bolder;
+  font-family: 'Josefin Slab', serif;
   /* padding-left: 20px; */
 }
+
+h3 {
+  font-size: 20px;
+  font-family: 'Josefin Slab', serif;
+  text-align: center;
+  /* padding-left: 20px; */
+}
+
 /* title */
 .city-name {
-  border: 1px dashed black;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 /* safety and map section */
-.safety-and-map {
+/*.safety-and-map {
   display: flex;
   flex-direction: row;
   border: 1px dashed black;
@@ -51,79 +57,72 @@ h2 {
 
 li {
   /* border: 1px dashed black; */
-  /* padding: 20px; */
-  /* text-align: center;
-  padding-right: 20px; */
+/* padding: 20px; */
+/* text-align: center;
+  padding-right: 20px; 
 }
 
 .map-box {
   border: 1px dashed black;
-  /* width: 100%; */
-}
+  /* width: 100%; 
+}*/
 
 /* food */
+
+/*
 .food {
-  border: 1px dashed black;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* padding: 40px; */
+  /* padding: 40px;
   margin-right: 20px;
   margin-left: 20px;
-  /* height: 150px; */
+  /* height: 150px;
 }
 
 .food-cont {
-  border: 1px dashed black;
-
   /* display: flex;
   flex-direction: row;
-  justify-content: flex-start; */
+  justify-content: flex-start;
 }
 
 .food-item {
-  border: 1px dashed black;
   width: 15%;
   justify-content: space-around;
   padding: 5px;
 }
 
-/* places of interest */
+/* places of interest 
 .places-interest {
-  border: 1px dashed black;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* padding: 40px; */
+  /* padding: 40px;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 .places-item {
-  border: 1px dashed black;
   display: flex;
-
   width: 15%;
   justify-content: space-around;
   padding: 5px;
 }
 
-/* excursions */
+/* excursions 
 .excursions {
-  border: 1px dashed black;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  /* padding: 40px; */
+  /* padding: 40px; 
   margin-right: 20px;
   margin-left: 20px;
 }
 
 .excursions-item {
-  border: 1px dashed black;
   width: 15%;
   justify-content: space-around;
   padding: 5px;
@@ -133,9 +132,9 @@ li {
   text-align: center;
   padding-bottom: 20px;
 }
+*/
 
-/* media query for smaller devices */
-
+/*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
   .nav-bar {
     display: flex;
@@ -144,66 +143,87 @@ li {
   }
 
   h1 {
-    font-size: 30px;
-    text-align: center;
+    font-size: 50px;
+  }
+
+  /*--------------------MAP & STATS--------------------*/
+  .safety-and-map {
+    box-shadow: 4px 8px 8px 2px var(--dark);
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  /*----------MAP----------*/
+  .safety-and-map img {
+    border: solid var(--dark) 3px;
+    width: 100%;
+    height: auto;
+  }
+
+  /*----------STATS----------*/
+  .safety-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 0 0 25px 25px;
   }
 
   h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+
+  .safety-stats ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 75px;
+    margin-right: 75px;
+    height: auto;
+  }
+
+  .safety-stats ul li {
+    font-family: 'Hind', sans-serif;
     font-size: 20px;
-    font-weight: bolder;
+    margin: 10px;
+  }
+
+  /*--------------------RECOMMENDATIONS--------------------*/
+  .recommendations {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*----------CARDS----------*/
+  .recommendations article {
+    margin: 10px
+  }
+
+  /*----------HEADINGS----------*/
+  h3 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
     text-align: center;
   }
 
-  .safety-and-map {
+  /*----------OPTIONS----------*/
+  article ul {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
   }
 
-  p {
-    flex-direction: row;
-  }
-
-  .map-box {
-    border: 1px dashed black;
-    width: 100%;
-    flex-direction: row;
-  }
-
-  .food-item {
-    width: 100%;
-  }
-
-  .food {
-    border: 1px dashed black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* places of interest */
-  .places-interest {
-    border: 1px dashed black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-  }
-
-  .places-item {
-    width: 100%;
-  }
-
-  /* excursions */
-  .excursions {
-    border: 1px dashed black;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-  }
-
-  .excursions-item {
-    width: 100%;
+  article ul li {
+    margin: 15px;
+    list-style: none;
   }
 }
