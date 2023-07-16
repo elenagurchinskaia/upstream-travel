@@ -62,7 +62,9 @@ body, html {
     transform: translate(-50%, -50%);
     color: rgb(0, 0, 0, 0.8);
 }
-
-.button {
-    
+.input-field label {
+    color: #000000;
 }
+.input-field input[type=text]:focus + label {
+    color: #000;
+}  
