@@ -1,7 +1,19 @@
+:root {
+  --primary: #ecc8af;
+  --secondary: #e7ad99;
+  --tertiary: #ce796b;
+  --ocher: #c18c5d;
+  --dark: #495867;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.nav-wrapper {
+  background-color: var(--dark);
 }
 
 /* titles */
@@ -12,8 +24,9 @@ h1 {
 
 h2 {
   font-size: 20px;
+  font-family: "Quicksand", sans-serif;
   border: 1px dashed black;
-  justify-content: flex-start;
+  font-weight: bolder;
   /* padding-left: 20px; */
 }
 /* title */
@@ -45,6 +58,7 @@ li {
 
 .map-box {
   border: 1px dashed black;
+  /* width: 100%; */
 }
 
 /* food */
@@ -129,42 +143,55 @@ li {
     justify-content: space-between;
   }
 
-  /* h1 {
+  h1 {
     font-size: 30px;
     text-align: center;
   }
 
   h2 {
     font-size: 20px;
-  } */
+    font-weight: bolder;
+    text-align: center;
+  }
 
-  /* .safety-and-map { */
-  /* display: flex; */
-  /* flex-direction: columns; */
-  /* } */
+  .safety-and-map {
+    display: flex;
+    flex-direction: column;
+  }
 
-  /* .food-item { */
-  /* width: 15%;
-  justify-content: space-around;
-  /* margin: 5px; */
-  /* padding: 5px; */
-  /* } */
+  p {
+    flex-direction: row;
+  }
 
-  /* .food {
+  .map-box {
+    border: 1px dashed black;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .food-item {
+    width: 100%;
+  }
+
+  .food {
     border: 1px dashed black;
     border-radius: 5px;
-    display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-start; */
-  /* } */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   /* places of interest */
   .places-interest {
     border: 1px dashed black;
     border-radius: 5px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* justify-content: flex-start; */
+  }
+
+  .places-item {
+    width: 100%;
   }
 
   /* excursions */
@@ -172,7 +199,11 @@ li {
     border: 1px dashed black;
     border-radius: 5px;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* justify-content: flex-start; */
+  }
+
+  .excursions-item {
+    width: 100%;
   }
 }
