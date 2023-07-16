@@ -4,7 +4,7 @@
 
 ## Description
 
-Most travel apps available today suggest traditional travel itineraries, to places that have been well traveled and explored. With Upstream Travel, we want to provide unique travel experiences that will leave travelers with unforgettable memories.
+Most travel apps available today suggest traditional travel itineraries to places that have been well traveled and explored. With Upstream Travel, we want to provide unique travel experiences that will leave travelers with unforgettable memories.
 
 Current travel apps return only the most popular or highest rated places. Upstream Travel will recommend uncommon places to eat at and explore by filtering results through the lens of a local resident for food and destinations and give you a feel for the adventures you might have with a music track chosen for a vibe check.
 
