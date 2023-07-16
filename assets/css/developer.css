@@ -1,23 +1,94 @@
+/*----------------------------------DEFAULT CSS----------------------------------*/
+/*----------MAIN BODY----------*/
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+
 .cards div {
     background-color: whitesmoke;
     box-shadow: 4px 8px 8px 2px #c18c5d;
 }
 
-h1 {
-    font-family: 'Quicksand', sans-serif;
+/*----------DEV CARDS----------*/
+.cards div {
+    margin: 10px;
+    border-radius: 25px;
 }
 
+/*----------NAME----------*/
+h1 {
+    color: #495867;
+    padding: 50px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 45px;
+    text-align: center;
+}
+
+/*----------IMAGE----------*/
+.profile-img {
+    width: 375px;
+    height: auto;
+    border: #c18c5d solid 5px;
+    border-radius: 50%;
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*---------------ARTICLE---------------*/
 h2 {
+    color: #495867;
     font-family: 'Josefin Slab', serif;
+    font-size: 40px;
+    margin: 10px;
+}
+
+article {
+    padding: 25px;
+}
+
+/*----------CONTACT----------*/
+article ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
 }
 
 article ul li {
+    color: #495867;
     font-family: 'Hind', sans-serif;
+    display: flex;
+    align-items: center;
+    margin: 10px;
 }
 
-article p {
-    font-family: 'Hind', sans-serif;
+.linkedin,
+.github,
+.portfolio,
+.email {
+    width: auto;
+    height: 25px;
 }
+
+article a {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+/*----------ABOUT & CONTRIBUTIONS----------*/
+article p {
+    color: #495867;
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 100px;
+    line-height: 1.5rem;
+}
+
 /*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
 
@@ -96,74 +167,75 @@ article p {
 
 /*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
 @media screen and (min-width: 781px) and (max-width: 1366px) {
-        /*----------MAIN BODY----------*/
-        .cards {
-            display: flex;
-            flex-direction: column;
-            margin: 20px;
-        }
-    
-        /*----------DEV CARDS----------*/
-        .cards div {
-            margin: 20px;
-            border-radius: 25px;
-        }
-    
-        /*----------NAME----------*/
-        h1 {
-    
-            font-size: 70px;
-            text-align: center;
-        }
-    
-        /*----------IMAGE----------*/
-        .profile-img {
-            width: 350px;
-            height: auto;
-            border: #c18c5d solid 5px;
-            border-radius: 50%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    
-        /*---------------ARTICLE---------------*/
-        h2 {
-            font-size: 50px;
-            margin: 30px;
-        }
-    
-        /*----------CONTACT----------*/
-        article ul {
-            display: flex;
-            flex-direction: column;
-            margin-left: 100px;
-        }
-    
-        article ul li {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
-    
-        .linkedin,
-        .github,
-        .portfolio,
-        .email {
-            width: auto;
-            height: 50px;
-        }
-    
-        article a {
-            font-size: 30px;
-            margin-left: 30px;
-        }
-    
-        /*----------ABOUT & CONTRIBUTIONS----------*/
-        article p {
-            font-size: 30px;
-            margin-left: 100px;
-            margin-right: 100px;
-            line-height: 1.5rem;
-        }
+
+    /*----------MAIN BODY----------*/
+    .cards {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    /*----------DEV CARDS----------*/
+    .cards div {
+        margin: 20px;
+        border-radius: 25px;
+    }
+
+    /*----------NAME----------*/
+    h1 {
+
+        font-size: 70px;
+        text-align: center;
+    }
+
+    /*----------IMAGE----------*/
+    .profile-img {
+        width: 350px;
+        height: auto;
+        border: #c18c5d solid 5px;
+        border-radius: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*---------------ARTICLE---------------*/
+    h2 {
+        font-size: 50px;
+        margin: 30px;
+    }
+
+    /*----------CONTACT----------*/
+    article ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+    }
+
+    article ul li {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .linkedin,
+    .github,
+    .portfolio,
+    .email {
+        width: auto;
+        height: 50px;
+    }
+
+    article a {
+        font-size: 30px;
+        margin-left: 30px;
+    }
+
+    /*----------ABOUT & CONTRIBUTIONS----------*/
+    article p {
+        font-size: 30px;
+        margin-left: 100px;
+        margin-right: 100px;
+        line-height: 1.5rem;
+    }
 }
