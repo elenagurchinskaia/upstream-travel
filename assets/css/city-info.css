@@ -1,3 +1,4 @@
+/*----------COLORS----------*/
 :root {
   --primary: #ecc8af;
   --secondary: #e7ad99;
@@ -6,133 +7,117 @@
   --dark: #495867;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/*----------------------------------DEFAULT CSS----------------------------------*/
+/*-----------------------NAV BAR-----------------------*/
 .nav-wrapper {
   background-color: var(--dark);
 }
 
-/* titles */
+/*--------------------CITY HEADING--------------------*/
 h1 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 70px;
+  font-size: 90px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/*--------------------MAP & STATS--------------------*/
+.safety-and-map {
+  box-shadow: 4px 4px 8px 2px var(--dark);
+  border-radius: 0 25px 25px 0;
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/*----------MAP----------*/
+.safety-and-map img {
+  border: solid var(--dark) 3px;
+  width: 80%;
+  height: auto;
+}
+
+/*----------STATS----------*/
+.safety-stats {
+  border-radius: 0 25px 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
 }
 
 h2 {
-  font-size: 20px;
   font-family: 'Josefin Slab', serif;
-  /* padding-left: 20px; */
-}
-
-h3 {
-  font-size: 20px;
-  font-family: 'Josefin Slab', serif;
+  font-size: 30px;
   text-align: center;
-  /* padding-left: 20px; */
+  margin-top: 25px;
+  margin-bottom: 0;
 }
 
-/* title */
-.city-name {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-/* safety and map section */
-/*.safety-and-map {
+.safety-stats ul {
   display: flex;
   flex-direction: row;
-  border: 1px dashed black;
-  margin-right: 20px;
-  margin-left: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
-.safety-stats {
-  border: 1px dashed black;
+.safety-stats ul li {
+  font-family: 'Hind', sans-serif;
+  font-size: 20px;
+  margin: 30px;
 }
 
-li {
-  /* border: 1px dashed black; */
-/* padding: 20px; */
-/* text-align: center;
-  padding-right: 20px; 
+/*--------------------RECOMMENDATIONS--------------------*/
+.recommendations {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
-.map-box {
-  border: 1px dashed black;
-  /* width: 100%; 
-}*/
+/*----------CARDS----------*/
+.recommendations article {
+  display: flex;
+  flex-direction: column;
+  margin: 50px
+}
 
-/* food */
+/*----------HEADINGS----------*/
+h3 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  text-align: left;
+}
 
-/*
-.food {
-  border-radius: 5px;
+/*----------OPTIONS----------*/
+article ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  /* padding: 40px;
-  margin-right: 20px;
-  margin-left: 20px;
-  /* height: 150px;
+  justify-content: space-evenly;
+  margin: 0;
 }
 
-.food-cont {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+article ul li {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  list-style: none;
+  padding: 16px;
 }
 
-.food-item {
-  width: 15%;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-/* places of interest 
-.places-interest {
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  /* padding: 40px;
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-.places-item {
-  display: flex;
-  width: 15%;
-  justify-content: space-around;
-  padding: 5px;
-}
-
-/* excursions 
-.excursions {
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  /* padding: 40px; 
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-.excursions-item {
-  width: 15%;
-  justify-content: space-around;
-  padding: 5px;
-}
-
+/*--------------------FOOTER--------------------*/
 .footer-slogan {
   text-align: center;
   padding-bottom: 20px;
+  font-size: 1rem;
 }
-*/
 
 /*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
