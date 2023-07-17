@@ -1,70 +1,94 @@
 /* sub head font family - Quicksand, Josefin Slab, Hind */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Hind&family=Quicksand:wght@700&display=swap');
 
-body {
-    font-family: 'Hind', sans-serif;
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: 400;
-    line-height: 1.58;
-    letter-spacing: -.003em;
-    font-size: 20px;
-    
+/*----------COLORS----------*/
+:root {
+    --primary: #ecc8af;
+    --secondary: #e7ad99;
+    --tertiary: #ce796b;
+    --ocher: #c18c5d;
+    --dark: #495867;
 }
 
-
+/*----------------------------------DEFAULT CSS----------------------------------*/
+/*-----------------------NAV BAR-----------------------*/
+.nav-wrapper {
+    background-color: var(--dark);
+}
 
 h1 {
+    outline: orange dashed 2px;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 38px;
-    line-height: 1.15;
-    letter-spacing: -.02em;
-    color: rgba(0, 0, 0, 0.8);
-    -webkit-font-smoothing: antialiased;
+    font-size: 50px;
+    margin-top: 0;
+    text-align: center;
+    
 }
 
 h2 {
     font-family: 'Josefin Slab', serif;
-    font-weight: 300;
-    font-style: normal;
     font-size: 28px;
-    line-height: 1.15;
-    letter-spacing: -.02em;
-    color: rgba(0, 0, 0, 0.8);
-    -webkit-font-smoothing: antialiased;  
 }
 
-body, html {
-    height: 100%;
-}
-
-.hero-image {
-    /* Linear-gradient" darkens the bakground image which will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5));
-
-    /* Set a specific height */
-    height: 100%;
-
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
+#search {
+    background-image: url(../images/simon-berger-twukN12EN7c-unsplash.png);
+    outline: blue dashed 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
-    position: relative;
+    height: 100vh;
+    background-position: center center;
 }
 
 /* Place text in the middle of the image */
 .hero-text {
+    outline: red dashed 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.hero-text p {
+    outline: green dashed 2px;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0, 0.8);
+}
+button {
+    outline: black dashed 3px;
+    font-family: 'Hind', sans-serif;
+    font-size: large;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: #495867;
+    color: #ffffff;
+
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .input-field label {
     color: #000000;
 }
-.input-field input[type=text]:focus + label {
+
+.input-field input[type=text]:focus+label {
     color: #000;
-}  
+}
+
+@media screen and (max-width: 780px) {
+    .nav-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+}
