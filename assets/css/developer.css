@@ -1,3 +1,19 @@
+/*----------COLORS----------*/
+:root {
+    --primary: #ecc8af;
+    --secondary: #e7ad99;
+    --tertiary: #ce796b;
+    --ocher: #c18c5d;
+    --dark: #495867;
+  }
+
+  /*----------FONTS----------*/
+:root {
+    --quicksand: 'Quicksand', sans-serif;
+    --josefin-slab: 'Josefin Slab', serif;
+    --hind: 'Hind', sans-serif;
+}
+
 /*----------------------------------DEFAULT CSS----------------------------------*/
 /*-----------------------NAV BAR-----------------------*/
 .nav-wrapper {
@@ -14,7 +30,7 @@
 
 .cards div {
     background-color: whitesmoke;
-    box-shadow: 4px 8px 8px 2px #c18c5d;
+    box-shadow: 4px 8px 8px 2px var(--ocher);
 }
 
 /*----------DEV CARDS----------*/
@@ -25,9 +41,9 @@
 
 /*----------NAME----------*/
 h1 {
-    color: #495867;
+    color: var(--dark);
     padding: 50px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--quicksand);
     font-size: 45px;
     text-align: center;
 }
@@ -36,7 +52,7 @@ h1 {
 .profile-img {
     width: 375px;
     height: auto;
-    border: #c18c5d solid 5px;
+    border: var(--ocher) solid 5px;
     border-radius: 50%;
     display: block;
     margin-top: 30px;
@@ -46,8 +62,8 @@ h1 {
 
 /*---------------ARTICLE---------------*/
 h2 {
-    color: #495867;
-    font-family: 'Josefin Slab', serif;
+    color: var(--dark);
+    font-family: var(--josefin-slab);
     font-size: 40px;
     margin: 10px;
 }
@@ -64,8 +80,8 @@ article ul {
 }
 
 article ul li {
-    color: #495867;
-    font-family: 'Hind', sans-serif;
+    color: var(--dark);
+    font-family: var(--hind);
     display: flex;
     align-items: center;
     margin: 10px;
@@ -86,8 +102,8 @@ article a {
 
 /*----------ABOUT & CONTRIBUTIONS----------*/
 article p {
-    color: #495867;
-    font-family: 'Hind', sans-serif;
+    color: var(--dark);
+    font-family: var(--hind);
     font-size: 20px;
     margin-left: 10px;
     margin-right: 100px;
@@ -121,7 +137,7 @@ article p {
     .profile-img {
         width: 250px;
         height: auto;
-        border: #c18c5d solid 5px;
+        border: var(--ocher) solid 5px;
         border-radius: 50%;
         display: block;
         margin-left: auto;
@@ -201,7 +217,7 @@ article p {
     .profile-img {
         width: 350px;
         height: auto;
-        border: #c18c5d solid 5px;
+        border: var(--ocher) solid 5px;
         border-radius: 50%;
         display: block;
         margin-left: auto;
