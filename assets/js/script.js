@@ -75,10 +75,13 @@ fetch('https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=PAR&m
 // var { lat, lon } = data.coord;
 // var city = cityInputEl.value.trim();
 
+varAPIKey = "";
+var amadeusApiToken = "ws7PjxnydAcGExorNFdjzGVjXqIQ";
 var cityInputEl = document.querySelector("#cityName");
 var searchBtn = document.querySelector(".search-btn");
-
-varAPIKey = "";
+var headers = {
+  Authorization: "Bearer ${accessToken}",
+};
 
 var getCityCoordinates = function (event) {
   event.preventDefault();
@@ -90,21 +93,30 @@ var getCityCoordinates = function (event) {
   }
 };
 
-var searchCity = function (cityInfo) {
-  var apiUrl =
-    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-    city;
-
-  fetch(apiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        console.log(data);
-        return response.json();
-        // storeSearch(data.length, cityInfo);
-      });
-    }
+fetch(apiUrl, {
+  headers: headers,
+})
+  .then((response) => response.json())
+  .then((data) => {
+    // process api response
+    console.log(data);
   });
-};
+
+// var searchCity = function (cityInfo) {
+//   var apiUrl =
+//     "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
+//     city;
+
+//   fetch(apiUrl).then(function (response) {
+//     if (response.ok) {
+//       response.json().then(function (data) {
+//         console.log(data);
+//         return response.json();
+//         // storeSearch(data.length, cityInfo);
+//       });
+//     }
+//   });
+// };
 
 // var storeSearch = function (coordinates,)
 
