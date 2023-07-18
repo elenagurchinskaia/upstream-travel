@@ -16,7 +16,7 @@
 var searchBtn = document.querySelector(".search-btn");
 
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer RA4nRypm0LZ3AghiodXUBoNl8f7F");
+myHeaders.append("Authorization", "Bearer TwMldC3nCGS7N0MPJkPsArSGB75I");
 
 var requestOptions = {
   method: "GET",
@@ -49,20 +49,32 @@ function getCityInfo(event) {
         var stateCode = cityData.address.stateCode;
         var countryCode = cityData.address.countryCode;
 
+        // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
         var cityBtn = document.createElement("button");
-        cityBtn.textContent = cityName + ", " + stateCode + " - " + countryCode;
+        cityBtn.textContent = cityName + ", " + stateCode + "; " + countryCode;
 
         cityBtn.addEventListener(
           "click",
-          (function (name, state, country) {
-            return function () {
-              var selectedCity = {
-                cityName: name,
-                stateCode: state,
-                countryCode: country,
-              };
-              console.log(selectedCity);
+          (function () {
+            var selectedCity = {
+              cityName: cityName,
+              longitude: cityData.geoCode.longitude,
+              latitude: cityData.geoCode.latitude,
             };
+
+            localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
+
+            // create an anchor tag element with teh city info page URL
+            var link = document.createElement("a");
+            link.href = "../assets/html/city-info.html";
+
+            //redirect the user to the city-info page
+            // window.location.href =
+            //   "../assest/html/city-info.html?lat=" +
+            //   latitude +
+            //   "&lng=" +
+            //   longitude;
+            console.log(selectedCity);
           })(cityName, stateCode, countryCode)
         );
 
@@ -71,8 +83,6 @@ function getCityInfo(event) {
     })
     .catch((error) => console.log("error", error));
 }
-
-// -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
