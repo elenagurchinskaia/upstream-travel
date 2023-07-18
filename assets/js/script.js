@@ -17,7 +17,12 @@ var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
 var myHeaders = new Headers();
+<<<<<<< HEAD
 myHeaders.append("Authorization", "Bearer woqkaHCYJdmW1lTJyY3dAqnz0n1i");
+=======
+
+myHeaders.append("Authorization", "Bearer RA4nRypm0LZ3AghiodXUBoNl8f7F");
+>>>>>>> main
 
 var requestOptions = {
   method: "GET",
@@ -105,6 +110,12 @@ function getCityInfo(event) {
     .catch((error) => console.log("error", error));
 }
 
+<<<<<<< HEAD
+=======
+// -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
+
+
+>>>>>>> main
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
 searchBtn.addEventListener("click", getCityInfo);
