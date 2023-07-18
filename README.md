@@ -23,7 +23,7 @@ Current travel apps return only the most popular or highest rated places. Upstre
 | Technology Used         | Resource URL           | 
 | ------------- |-------------| 
 | Materialize   | [https://materializecss.com](https://materializecss.com) | 
-| webpage   | [https://url/](https://url/) |    
+| Postman   | [https://www.postman.com/](https://www.postman.com/) |    
 | webpage   | [https://url/](https://url/) |    
 | webpage   | [https://url/](https://url/) | 
 | webpage   | [https://url/](https://url/) | 

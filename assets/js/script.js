@@ -16,6 +16,7 @@
 var searchBtn = document.querySelector(".search-btn");
 
 var myHeaders = new Headers();
+
 myHeaders.append("Authorization", "Bearer RA4nRypm0LZ3AghiodXUBoNl8f7F");
 
 var requestOptions = {
@@ -73,6 +74,7 @@ function getCityInfo(event) {
 }
 
 // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
+
 
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
