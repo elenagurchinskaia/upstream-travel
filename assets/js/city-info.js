@@ -1,13 +1,18 @@
-// global variables
+// ------------------------- CITY COORDINATES -------------------------//
+
+// var city = localStorage.getItem("city");
+// var lon = localStorage.getItem("longitude");
+// var lat = localStorage.getItem("latitude");
+
+//console.log(city);
+// console.log(lon);
+// console.log(lat);
 
 //use localStorage to getItems
 //create two variables for the latitude and longitude (FROM LOCAL STORAGE)
 //use those variables in the api url to insert the coordinates for the selected city
-// var city = localStorage.getItem("city");
-// var lon = localStorage.getItem("longitude");
-// var lat = localStorage.getItem("latitude");
-// console.log(lon);
-// console.log(lat);
+
+
 
 // -------------------------------------------- SAFETY STATS ---------------------------------------------------------//
 
