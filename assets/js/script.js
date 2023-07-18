@@ -33,8 +33,8 @@ function getCityInfo(event) {
 
   fetch(
     "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-      city +
-      "&max=5",
+    city +
+    "&max=5",
     requestOptions
   )
     .then((response) => response.json())
