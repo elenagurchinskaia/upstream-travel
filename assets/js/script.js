@@ -47,7 +47,7 @@ searchBtn.addEventListener("click", getCityInfo);
 
 // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 
-
+test to see if my pull request works
 
 
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
