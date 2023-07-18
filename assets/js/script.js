@@ -83,24 +83,30 @@ var headers = {
   Authorization: "Bearer ${accessToken}",
 };
 
-var getCityCoordinates = function (event) {
-  event.preventDefault();
+
+
+
+function getCityCoordinates() {
   var city = cityInputEl.value.trim();
-  if (city) {
-    search(city);
-    storeSearch(city);
-    cityInputEl.value = "";
-  }
+  console.log(city)
+
+  localStorage.setItem("cityName", JSON.stringify(city))
+  location.replace("assets/html/city-info.html")
+  // if (city) {
+  //   search(city);
+  //   storeSearch(city);
+  //   cityInputEl.value = "";
+  // }
 };
 
-fetch(apiUrl, {
-  headers: headers,
-})
-  .then((response) => response.json())
-  .then((data) => {
-    // process api response
-    console.log(data);
-  });
+// fetch(apiUrl, {
+//   headers: headers,
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // process api response
+//     console.log(data);
+//   });
 
 // var searchCity = function (cityInfo) {
 //   var apiUrl =
@@ -130,4 +136,4 @@ fetch(apiUrl, {
 //   }
 // });
 
-searchBtn.addEventListener("submit", getCityCoordinates);
+searchBtn.addEventListener("click", getCityCoordinates);

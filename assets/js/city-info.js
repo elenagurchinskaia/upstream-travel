@@ -3,15 +3,19 @@
 //use localStorage to getItems
 //create two variables for the latitude and longitude (FROM LOCAL STORAGE)
 //use those variables in the api url to insert the coordinates for the selected city
-var city = localStorage.getItem("city");
-var lon = localStorage.getItem("longitude");
-var lat = localStorage.getItem("latitude");
-console.log(lon);
-console.log(lat);
+var city = localStorage.getItem("cityName");
+
+console.log(city);
+
+
+window.addEventListener("load", function () {
+  var cityUrl = "https://api.amadeus.net/v1/reference-data/locations/cities/keyword=" + city;
+  // work with teammates to create the fetch for the city long and lat coordinates
+});
 
 // API URL's
 
-var safetyStats = function () {
+function safetyStats(lat, lon) {
   var safetyApiUrl =
     "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" +
     lat +
