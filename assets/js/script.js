@@ -17,7 +17,10 @@ var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer 3uYzxaS1z75UzLERv4c4BvAt0x1t");
+
+
+myHeaders.append("Authorization", "Bearer nfaIeNfDYGLGVIZ0x4AZcBeYCzit");
+
 
 var requestOptions = {
   method: "GET",
@@ -33,8 +36,8 @@ function getCityInfo(event) {
 
   fetch(
     "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-    city +
-    "&max=5",
+      city +
+      "&max=5",
     requestOptions
   )
     .then((response) => response.json())
@@ -52,28 +55,24 @@ function getCityInfo(event) {
         var latitude = cityData.geoCode.latitude;
         var longitude = cityData.geoCode.longitude;
 
-    
         // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
         var cityBtn = document.createElement("button");
         cityBtn.textContent = cityName + ", " + stateCode + "; " + countryCode;
         // add lat and long as data-attributes to cityBtn
 
-        cityBtn.addEventListener(
-          "click",
-          (function (event) {
-            event.preventDefault();
-            var selectedCity = {
-              cityName: cityName,
-              longitude: cityData.geoCode.longitude,
-              latitude: cityData.geoCode.latitude,
-            };
+        cityBtn.addEventListener("click", function (event) {
+          event.preventDefault();
+          var selectedCity = {
+            cityName: cityName,
+            longitude: cityData.geoCode.longitude,
+            latitude: cityData.geoCode.latitude,
+          };
 
-            localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
-            console.log(selectedCity);
+          localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
+          console.log(selectedCity);
 
-            window.location.href = "city-info.html";
-          })
-        );
+          window.location.href = "city-info.html";
+        });
 
         buttonContainer.appendChild(cityBtn);
       }
