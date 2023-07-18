@@ -1,12 +1,10 @@
 // ------------------------- CITY COORDINATES -------------------------//
 
-// var city = localStorage.getItem("city");
-// var lon = localStorage.getItem("longitude");
-// var lat = localStorage.getItem("latitude");
+var city = JSON.parse(localStorage.getItem('selectedCity'));
+console.log(city);
 
-//console.log(city);
-// console.log(lon);
-// console.log(lat);
+var lon = city.longitude;
+var lat = city.latitude;
 
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
@@ -30,7 +28,7 @@
 
 function safetyStats() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
+  myHeaders.append("Authorization", "Bearer Is27FFDE0AlDZQGxoAcqVYixih1k");
 
   var requestOptions = {
     method: 'GET',
@@ -39,84 +37,67 @@ function safetyStats() {
   };
 
 
-  fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=41.397158&longitude=2.160873&radius=1&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
+  fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=47.606210&longitude=-122.332070&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
     .then(response => response.json())
     .then(result => {
-      console.log('Safety Stats: ', result);
+      console.log('Safety Stats: ');
+      console.log(result);
 
-      var safetyContainer = document.getElementById('safety-stats-list');
-      safetyContainer.innerHTML = "";
+      
+  
+      var safetyData = result.data[0].safetyScores;
+      var overallNum = 'Overall: ' + safetyData.overall;
+      var lgbtqNum = 'LGBTQ+: ' + safetyData.lgbtq;
+      var medicalNum = 'Medical: ' + safetyData.medical;
+      var physicalHarmNum = 'Physical Harm: ' + safetyData.physicalHarm;
+      var politicalFreedomNum = 'Political Freedom: ' + safetyData.politicalFreedom;
+      var theftNum = 'Theft: ' + safetyData.theft;
+      var womenNum = "Women's Safety: " + safetyData.women;
 
-        var safetyData = result.data.safetyScores;
-        var lgbtqNum = 'LGBTQ+: ' + safetyData.lgbtq;
-        var medicalNum = 'Medical: ' + safetyData.medical;
-        var overallNum = 'Overall: ' + safetyData.overall;
-        var physicalHarmNum = 'Physical Harm: ' + safetyData.physicalHarm;
-        var politicalFreedomNum = 'Political Freedom: ' + safetyData.politicalFreedom;
-        var theftNum = 'Theft: ' + safetyData.theft;
-        var womenNum = "Women's Safety: " + safetyData.women;
 
-        //----------LGBTQ SCORE----------//
-        var lgbtScore = document.createElement('li');
-        lgbtScore.textContent = lgbtqNum;
-        safetyContainer.appendChild(lgbtScore);
-        console.log(lgbtqNum);
+      //----------OVERALL SCORE----------//
+      var overallScore = document.getElementById('overallScore');
+      overallScore.textContent = overallNum;
+      console.log(overallNum);
 
-        //----------MEDICAL SCORE----------//
-        var medicalScore = document.createElement('li');
-        medicalScore.textContent = medicalNum;
-        safetyContainer.appendChild(medicalScore);
-        console.log(medicalNum);
+      //----------LGBTQ SCORE----------//
+      var lgbtScore = document.getElementById('lgbtqScore');
+      lgbtScore.textContent = lgbtqNum;
+      console.log(lgbtqNum);
 
-        //----------OVERALL SCORE----------//
-        var overallScore = document.createElement('li');
-        overallScore.textContent = overallNum;
-        safetyContainer.appendChild(overallScore);
-        console.log(overallNum);
+      // //----------MEDICAL SCORE----------//
+      var medicalScore = document.createElement('li');
+      medicalScore.textContent = medicalNum;
+      safetyContainer.appendChild(medicalScore);
+      console.log(medicalNum);
 
-        //----------HARM SCORE----------//
-        var physicalHarmScore = document.createElement('li');
-        physicalHarmScore.textContent = physicalHarmNum;
-        safetyContainer.appendChild(physicalHarmScore);
-        console.log(physicalHarmNum);
+      // //----------HARM SCORE----------//
+      // var physicalHarmScore = document.createElement('li');
+      // physicalHarmScore.textContent = physicalHarmNum;
+      // safetyContainer.appendChild(physicalHarmScore);
+      // console.log(physicalHarmNum);
 
-        //----------POLITICAL SCORE----------//
-        var politicalFreedomScore = document.createElement('li');
-        politicalFreedomScore.textContent = politicalFreedomNum;
-        safetyContainer.appendChild(politicalFreedomScore);
-        console.log(politicalFreedomNum);
+      // //----------POLITICAL SCORE----------//
+      // var politicalFreedomScore = document.createElement('li');
+      // politicalFreedomScore.textContent = politicalFreedomNum;
+      // safetyContainer.appendChild(politicalFreedomScore);
+      // console.log(politicalFreedomNum);
 
-        //----------THEFT SCORE----------//
-        var theftScore = document.createElement('li');
-        theftScore.textContent = theftNum;
-        safetyContainer.appendChild(theftScore);
-        console.log(theftNum);
+      // //----------THEFT SCORE----------//
+      // var theftScore = document.createElement('li');
+      // theftScore.textContent = theftNum;
+      // safetyContainer.appendChild(theftScore);
+      // console.log(theftNum);
 
-        //----------WOMEN SCORE----------//
-        var womenScore = document.createElement('li');
-        womenScore.textContent = womenNum;
-        safetyContainer.appendChild(womenScore);
-        console.log(womenNum);
+      // //----------WOMEN SCORE----------//
+      // var womenScore = document.createElement('li');
+      // womenScore.textContent = womenNum;
+      // safetyContainer.appendChild(womenScore);
+      // console.log(womenNum);
 
     })
-    .catch (error => console.log('error', error));
+    .catch(error => console.log('error', error));
 };
-
-// add if else conditional statements
-
-//   for (var i = 0; i <= data.length; i++) {}
-
-//   loop thru the safety stats items
-//  for (var i = 0; i < ...; i++) {
-// var lgbtq = data[1].lgbtq
-// var medical = data[1].medical
-// var overall = data[1].overall
-// vr physicalHarm = data[2].physicalHarm
-// var politicalFreedom = data[2].politicalFreedom
-// var theft = data[2].theft
-// var women = data[2].women
-// append
-
 
 // -------------------------------------------- FOOD ---------------------------------------------------------//
 
@@ -134,7 +115,7 @@ function foodOptions() {
   fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT", requestOptions)
     .then(response => response.json())
     .then(result => console.log('Food: ', result))
-    .catch (error => console.log('error', error));
+    .catch(error => console.log('error', error));
 };
 
 // -------------------------------------------- PLACES OF INTEREST ---------------------------------------------------------//
@@ -158,27 +139,27 @@ function sightsOptions() {
 
 // -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
 
-function toursOptions() {
+// function toursOptions() {
 
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
+//   var myHeaders = new Headers();
+//   myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
 
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
+//   var requestOptions = {
+//     method: 'GET',
+//     headers: myHeaders,
+//     redirect: 'follow'
+//   };
 
-  fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=41.397158&longitude=2.160873&radius=15", requestOptions)
-    .then(response => response.json())
-    .then(result => console.log('Excursions: ', result))
-    .catch(error => console.log('error', error));
-}
+//   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=41.397158&longitude=2.160873&radius=15", requestOptions)
+//     .then(response => response.json())
+//     .then(result => console.log('Excursions: ', result))
+//     .catch(error => console.log('error', error));
+// }
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
 // cityMap();
 safetyStats();
-foodOptions();
-sightsOptions();
-toursOptions();
+// foodOptions();
+// sightsOptions();
+// toursOptions();
