@@ -1,114 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Info</title>
+    <!--Hind Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--Josefin Slab Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--Quicksand Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--Materialize Library-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/city-info.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>City Info</title>
-  <!--Hind Font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-    rel="stylesheet">
-  <!--Josefin Slab Font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-    rel="stylesheet">
-  <!--Quicksand Font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
-    rel="stylesheet">
-  <!--Materialize Library-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <link rel="stylesheet" href="./assets/css/city-info.css" />
-</head>
+  <body>
+    <!--------------------NAV BAR-------------------->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Upstream Travel</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="/index.html #about">ABOUT</a></li>
+          <li><a href="./assets/html/developer.html">DEVELOPERS</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!--------------------SIDE NAV-------------------->
 
-<body>
-  <!--------------------NAV BAR-------------------->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Upstream Travel</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="/index.html #about">ABOUT</a></li>
-        <li><a href="./assets/html/developer.html">DEVELOPERS</a></li>
-      </ul>
-    </div>
-  </nav>
-<!--------------------SIDE NAV-------------------->
-  
+    <h1 class="city-name">City Name</h1>
+    <!--------------------MAP & STATS-------------------->
+    <section class="safety-and-map">
+      <!----------MAP---------->
 
-  <h1 class="city-name">City Name</h1>
-  <!--------------------MAP & STATS-------------------->
-  <section class="safety-and-map">
-    <!----------MAP---------->
-    <img src="./assets/images/placeholder-map.jpeg" alt="placeholder map"></img>
-    <!---------STATS--------->
-    <section class="safety-stats">
-      <h2>SAFETY STATS</h2>
-      <ul id="safety-stats-list">
-        <li id="overallScore"></li>
-        <li id="lgbtqScore"></li>
-        <li id="womenScore"></li>
-        <li id="medicalScore"></li>
-        <li id="harmScore"></li>
-        <li id="politicalScore"></li>
-        <li id="theftScore"></li>
-      </ul>
+      <iframe
+        id="google-map"
+        width="600"
+        height="450"
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=Space+Needle,Seattle+WA"
+      >
+      </iframe>
+      <!-- <img src="./assets/images/placeholder-map.jpeg" alt="placeholder map"></img> -->
+      <!---------STATS--------->
+      <section class="safety-stats">
+        <h2>SAFETY STATS</h2>
+        <ul id="safety-stats-list">
+          <li id="overallScore"></li>
+          <li id="lgbtqScore"></li>
+          <li id="womenScore"></li>
+          <li id="medicalScore"></li>
+          <li id="harmScore"></li>
+          <li id="politicalScore"></li>
+          <li id="theftScore"></li>
+        </ul>
+      </section>
     </section>
-  </section>
 
-  <!--------------------RECOMMENDATIONS-------------------->
-  <section class="recommendations">
-    <!---------FOOD--------->
-    <article class="food">
-      <header>
-        <h3>FOOD</h3>
-      </header>
-      <ul>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-      </ul>
-    </article>
+    <!--------------------RECOMMENDATIONS-------------------->
+    <section class="recommendations">
+      <!---------FOOD--------->
+      <article class="food">
+        <header>
+          <h3>FOOD</h3>
+        </header>
+        <ul>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+        </ul>
+      </article>
 
-    <!---------PLACES OF INTEREST--------->
-    <article class="places-interest">
-      <header>
-        <h3>PLACES OF INTEREST</h3>
-      </header>
-      <ul>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-      </ul>
-    </article>
+      <!---------PLACES OF INTEREST--------->
+      <article class="places-interest">
+        <header>
+          <h3>PLACES OF INTEREST</h3>
+        </header>
+        <ul>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+        </ul>
+      </article>
 
-    <!---------EXCURSIONS--------->
-    <article class="excursions">
-      <header>
-        <h3>EXCURSIONS</h3>
-      </header>
-      <ul>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-      </ul>
-    </article>
-  </section>
-  <!--------------------FOOTER-------------------->
-  <footer class="footer-slogan">FOLLOW YOUR DREAMS</footer>
+      <!---------EXCURSIONS--------->
+      <article class="excursions">
+        <header>
+          <h3>EXCURSIONS</h3>
+        </header>
+        <ul>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+          <li>Placeholder</li>
+        </ul>
+      </article>
+    </section>
+    <!--------------------FOOTER-------------------->
+    <footer class="footer-slogan">FOLLOW YOUR DREAMS</footer>
 
-  <div id="#amadeus-api"></div>
-  <script src="./assets/js/city-info.js"></script>
-</body>
-
+    <div id="#amadeus-api"></div>
+    <script src="./assets/js/city-info.js"></script>
+  </body>
 </html>
