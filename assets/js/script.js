@@ -19,7 +19,7 @@ var searchBtn = document.querySelector(".search-btn");
 
 
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer pcybUALIoARyulk8CEBxNhhAUWXk");
+myHeaders.append("Authorization", "Bearer lzHKY1SpAcpGA1pEA1AC7ZRtV306");
 
 var requestOptions = {
   method: 'GET',
@@ -47,7 +47,7 @@ searchBtn.addEventListener("click", getCityInfo);
 
 // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 
-test to see if my pull request works
+
 
 
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
