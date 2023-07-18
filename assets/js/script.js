@@ -17,12 +17,7 @@ var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
 var myHeaders = new Headers();
-<<<<<<< HEAD
-myHeaders.append("Authorization", "Bearer woqkaHCYJdmW1lTJyY3dAqnz0n1i");
-=======
-
-myHeaders.append("Authorization", "Bearer RA4nRypm0LZ3AghiodXUBoNl8f7F");
->>>>>>> main
+myHeaders.append("Authorization", "Bearer VJz49h5lhCvJetySgeJ6ACcwOHLt");
 
 var requestOptions = {
   method: "GET",
@@ -38,8 +33,8 @@ function getCityInfo(event) {
 
   fetch(
     "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-      city +
-      "&max=5",
+    city +
+    "&max=5",
     requestOptions
   )
     .then((response) => response.json())
@@ -48,12 +43,16 @@ function getCityInfo(event) {
 
       buttonContainer.innerHTML = "";
 
-      for (var i = 0; i <= data.data.length; i++) {
+      for (var i = 0; i < data.data.length; i++) {
         var cityData = data.data[i];
+        console.log(cityData);
         var cityName = cityData.name;
         var stateCode = cityData.address.stateCode;
         var countryCode = cityData.address.countryCode;
+        var latitude = cityData.geoCode.latitude;
+        var longitude = cityData.geoCode.longitude;
 
+    
         // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
         var cityBtn = document.createElement("button");
         cityBtn.textContent = cityName + ", " + stateCode + "; " + countryCode;
@@ -61,47 +60,19 @@ function getCityInfo(event) {
 
         cityBtn.addEventListener(
           "click",
-          (function () {
+          (function (event) {
+            event.preventDefault();
             var selectedCity = {
               cityName: cityName,
               longitude: cityData.geoCode.longitude,
               latitude: cityData.geoCode.latitude,
             };
 
-            // var form = document.createElement("form");
-            // form.method = "GET";
-            // form.action = "../assets/html/city-info.html";
-
-            // var input = document.createElement("input");
-            // input.type = "hidden";
-            // input.name = "city";
-            // input.value = JSON.stringify(selectedCity);
-
-            // form.appendChild(input);
-            // document.body.appendChild(form);
-            // form.submit();
-
-            // create an anchor tag element with teh city info page URL
-            // var link = document.createElement("a");
-            // link.href = "../assets/html/city-info.html";
-
-            // // click event on the link
-            // var clickEvent = new MouseEvent("click", {
-            //   view: window,
-            //   bubbles: true,
-            //   cancelable: true,
-            // });
-            // link.dispatchEvent(clickEvent);
-
-            //redirect the user to the city-info page
-            // window.location.href =
-            //   "../assest/html/city-info.html?lat=" +
-            //   latitude +
-            //   "&lng=" +
-            //   longitude;
-
+            localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
             console.log(selectedCity);
-          })(cityName, stateCode, countryCode)
+
+            window.location.href = "city-info.html";
+          })
         );
 
         buttonContainer.appendChild(cityBtn);
@@ -110,37 +81,6 @@ function getCityInfo(event) {
     .catch((error) => console.log("error", error));
 }
 
-<<<<<<< HEAD
-=======
-// -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
-
-
->>>>>>> main
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
 searchBtn.addEventListener("click", getCityInfo);
-
-buttonContainer.addEventListener("click", function (event) {
-  event.preventDefault();
-  // check if teh clicked element is the button
-  console.log(event.target);
-  if (event.target.tagName === "BUTTON") {
-    var buttonText = event.target.textContent;
-
-    var cityName = buttonText.split(",")[0];
-    var stateCode = buttonText.split(",")[1].split(";")[0].trim();
-    var countryCode = buttonText.split(";")[1].trim();
-
-    var lat = event.target.s.dkjfa;
-
-    // Store the selected city data in local storage
-    var selectedCity = {
-      cityName: cityName,
-      stateCode: stateCode,
-      countryCode: countryCode,
-    };
-    localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
-    // Redirect the user to the city-info page
-    window.location.href = "city-info.html";
-  }
-});
