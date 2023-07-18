@@ -12,6 +12,9 @@ var APIkey = "AIzaSyBdXT-Im1q-WtbYM6fqm32GLH_ZVCbt2M4";
 
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
+
+
+
 function cityMap() {
   var source =
     "https://www.google.com/maps/embed/v1/place?key=" +
@@ -22,11 +25,15 @@ function cityMap() {
   mapEl.setAttribute("src", source);
 }
 
+
 // -------------------------------------------- SAFETY STATS ---------------------------------------------------------//
 
 function safetyStats() {
   var myHeaders = new Headers();
+
+
   myHeaders.append("Authorization", "Bearer nfaIeNfDYGLGVIZ0x4AZcBeYCzit");
+
 
   var requestOptions = {
     method: "GET",
@@ -34,13 +41,13 @@ function safetyStats() {
     redirect: "follow",
   };
 
-  fetch(
-    "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=47.606210&longitude=-122.332070&page%5Blimit%5D=1&page%5Boffset%5D=0",
-    requestOptions
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      console.log("Safety Stats: ");
+
+
+  fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" + lat + "&longitude=-" + lon + "&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log('Safety Stats: ');
+
       console.log(result);
 
       var safetyData = result.data[0].safetyScores;
@@ -64,34 +71,35 @@ function safetyStats() {
       console.log(lgbtqNum);
 
       // //----------MEDICAL SCORE----------//
-      var medicalScore = document.createElement("li");
+
+      var medicalScore = document.getElementById('medicalScore');
+
       medicalScore.textContent = medicalNum;
-      safetyContainer.appendChild(medicalScore);
       console.log(medicalNum);
 
-      // //----------HARM SCORE----------//
-      // var physicalHarmScore = document.createElement('li');
-      // physicalHarmScore.textContent = physicalHarmNum;
-      // safetyContainer.appendChild(physicalHarmScore);
-      // console.log(physicalHarmNum);
 
-      // //----------POLITICAL SCORE----------//
-      // var politicalFreedomScore = document.createElement('li');
-      // politicalFreedomScore.textContent = politicalFreedomNum;
-      // safetyContainer.appendChild(politicalFreedomScore);
-      // console.log(politicalFreedomNum);
+      //----------HARM SCORE----------//
+      var physicalHarmScore = document.getElementById('harmScore');
+      physicalHarmScore.textContent = physicalHarmNum;
+      console.log(physicalHarmNum);
 
-      // //----------THEFT SCORE----------//
-      // var theftScore = document.createElement('li');
-      // theftScore.textContent = theftNum;
-      // safetyContainer.appendChild(theftScore);
-      // console.log(theftNum);
+      //----------POLITICAL SCORE----------//
+      var politicalFreedomScore = document.getElementById('politicalScore');
+      politicalFreedomScore.textContent = politicalFreedomNum;
+      console.log(politicalFreedomNum);
 
-      // //----------WOMEN SCORE----------//
-      // var womenScore = document.createElement('li');
-      // womenScore.textContent = womenNum;
-      // safetyContainer.appendChild(womenScore);
-      // console.log(womenNum);
+      //----------THEFT SCORE----------//
+      var theftScore = document.getElementById('theftScore');
+      theftScore.textContent = theftNum;
+      console.log(theftNum);
+
+      //----------WOMEN SCORE----------//
+      var womenScore = document.createElement('womenScore');
+      womenScore.textContent = womenNum;
+      console.log(womenNum);
+
+
+     
     })
     .catch((error) => console.log("error", error));
 }
@@ -100,13 +108,14 @@ function safetyStats() {
 
 function foodOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
+  myHeaders.append("Authorization", "Bearer 3uYzxaS1z75UzLERv4c4BvAt0x1t");
 
   var requestOptions = {
     method: "GET",
     headers: myHeaders,
     redirect: "follow",
   };
+
 
   fetch(
     "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT",
@@ -117,11 +126,12 @@ function foodOptions() {
     .catch((error) => console.log("error", error));
 }
 
+
 // -------------------------------------------- PLACES OF INTEREST ---------------------------------------------------------//
 
 function sightsOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
+  myHeaders.append("Authorization", "Bearer 3uYzxaS1z75UzLERv4c4BvAt0x1t");
 
   var requestOptions = {
     method: "GET",
@@ -129,38 +139,37 @@ function sightsOptions() {
     redirect: "follow",
   };
 
-  fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS",
-    requestOptions
-  )
-    .then((response) => response.json())
-    .then((result) => console.log("Places of Interest: ", result))
-    .catch((error) => console.log("error", error));
+
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log('Places of Interest: ', result))
+    .catch(error => console.log('error', error));
+
 }
 
 // -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
 
-// function toursOptions() {
+function toursOptions() {
 
-//   var myHeaders = new Headers();
-//   myHeaders.append("Authorization", "Bearer By6cK9Hh6iG3ATbvfojt9d3ZYqI1");
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer 3uYzxaS1z75UzLERv4c4BvAt0x1t");
 
-//   var requestOptions = {
-//     method: 'GET',
-//     headers: myHeaders,
-//     redirect: 'follow'
-//   };
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
 
-//   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=41.397158&longitude=2.160873&radius=15", requestOptions)
-//     .then(response => response.json())
-//     .then(result => console.log('Excursions: ', result))
-//     .catch(error => console.log('error', error));
-// }
+  fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log('Excursions: ', result))
+    .catch(error => console.log('error', error));
+}
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
 cityMap();
 safetyStats();
-// foodOptions();
+foodOptions();
 // sightsOptions();
 // toursOptions();
