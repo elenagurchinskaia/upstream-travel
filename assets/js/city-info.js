@@ -67,6 +67,25 @@ function foodOptions() {
 
 // -------------------------------------------- PLACES OF INTEREST ---------------------------------------------------------//
 
+function sightsOptions() {
+
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer F1xbRAYFvOkgPOmU0hrwZRqedDQh");
+  
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873&radius=15&categories=SIGHTS", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+}
+
+// -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
+
 function toursOptions() {
 
   var myHeaders = new Headers();
@@ -84,9 +103,9 @@ function toursOptions() {
     .catch(error => console.log('error', error));
 }
 
-// -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
-
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
 safetyStats();
 foodOptions();
+sightsOptions();
+toursOptions();
