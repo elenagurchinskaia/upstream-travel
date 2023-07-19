@@ -17,17 +17,17 @@ Current travel apps return only the most popular or highest rated places. Upstre
 - JavaScript - used to add functionailty and logic to the application.
 - Git - used to track edits made to the source code.
 - GitHub - used to host and deploy the repository.
+- Amadeus for Developers - used to get API.
+- Google Maps - used to get the map API.
 
 <br>
 
-| Technology Used         | Resource URL           | 
-| ------------- |-------------| 
-| Materialize   | [https://materializecss.com](https://materializecss.com) | 
-| Postman   | [https://www.postman.com/](https://www.postman.com/) |    
-| webpage   | [https://url/](https://url/) |    
-| webpage   | [https://url/](https://url/) | 
-| webpage   | [https://url/](https://url/) | 
-| webpage   | [https://url/](https://url/) | 
+| Technology Used | Resource URL                                                      |
+| --------------- | ----------------------------------------------------------------- |
+| Materialize     | [https://materializecss.com/](https://materializecss.com)         |
+| Postman         | [https://www.postman.com/](https://www.postman.com/)              |
+| Amadeus         | [https://developers.amadeus.com/](https://developers.amadeus.com) |
+| Google          | [https://developers.google.com/](https://developers.google.com/)  |
 
 <br>
 
@@ -41,7 +41,7 @@ learning points
 
 Website URL: [Upstream Travel](https://elenagurchinskaia.github.io/upstream-travel)
 
-![alt text](./assets/images/)
+![alt text](./assets/images/home-page.png)
 
 <br>
 
@@ -63,11 +63,11 @@ Website URL: [Upstream Travel](https://elenagurchinskaia.github.io/upstream-trav
 
 ### Lainey Creighton
 
-*Currently a student in the UC Berkley Full Stack Flex Bootcamp. Contact Below:* 
+_Currently a student in the UC Berkley Full Stack Flex Bootcamp. Contact Below:_
 
-* [Portfolio](https://laineycreighton.github.io/portfolio/)
-* [LinkedIn](https://www.linkedin.com/in/lainey-creighton/)
-* [Github](https://github.com/laineycreighton)
+- [Portfolio](https://laineycreighton.github.io/portfolio/)
+- [LinkedIn](https://www.linkedin.com/in/lainey-creighton/)
+- [Github](https://github.com/laineycreighton)
 
 <br>
 
