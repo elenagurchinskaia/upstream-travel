@@ -12,24 +12,14 @@
 //use localStorage to setItem for the coordinates variable
 //redirect the user to the city-info.html
 
-// -------------------------------------------- GETS CITY INPUT DATA ---------------------------------------------------------//
+// -------------------------------------------- GETS CITY INPUT ---------------------------------------------------------//
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
-var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
+var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g"
 
 var myHeaders = new Headers();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-myHeaders.append("Authorization", "Bearer" + token);
-=======
-myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
->>>>>>> 5812b2c17cd4d0ea42af9b710d7aff4de913de7c
-=======
-myHeaders.append("Authorization", "Bearer" + token);
->>>>>>> ba144429c2030e419a53168fcb3afad7920603bf
+myHeaders.append("Authorization", "Bearer " + token);
 
 var requestOptions = {
   method: "GET",
@@ -37,21 +27,14 @@ var requestOptions = {
   redirect: "follow",
 };
 
+// -------------------------------------------- GETS CITY INFO DATA ---------------------------------------------------------//
 function getCityInfo(event) {
   event.preventDefault();
 
-  var city = document
-    .getElementById("cityName")
-    .value.trim()
-    .replace(" ", "%20");
+  var city = document.getElementById("cityName").value.trim().replace(" ", "%20");
   console.log(city);
 
-  fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-      city +
-      "&max=5",
-    requestOptions
-  )
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" + city + "&max=5", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
@@ -68,14 +51,13 @@ function getCityInfo(event) {
         var latitude = cityData.geoCode.latitude;
         var longitude = cityData.geoCode.longitude;
 
-        // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
-
         createCityButton(cityName, stateCode, countryCode, latitude, longitude);
       }
     })
     .catch((error) => console.log("error", error));
-}
+};
 
+// -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 function createCityButton(
   cityName,
   stateCode,
@@ -104,7 +86,7 @@ function createCityButton(
   });
 
   buttonContainer.appendChild(cityBtn);
-}
-// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
+};
 
+// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 searchBtn.addEventListener("click", getCityInfo);

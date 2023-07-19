@@ -1,7 +1,7 @@
 // ------------------------- SELECTORS -------------------------//
 var mapEl = document.getElementById("google-map");
 
-var token = "C5zeitZ0oo1GSsV9zMBq4yxFegmX"
+var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g"
 
 // ------------------------- CITY COORDINATES -------------------------//
 
@@ -39,7 +39,6 @@ function safetyStats() {
     headers: myHeaders,
     redirect: "follow",
   };
-
 
   fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" + lat + "&longitude=-" + lon + "&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
     .then((response) => response.json())
@@ -106,10 +105,7 @@ function foodOptions() {
     redirect: "follow",
   };
 
-  fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=41.397158&longitude=2.160873&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT",
-    requestOptions
-  )
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log("Food:");
@@ -169,23 +165,39 @@ function sightsOptions() {
 };
 
 
-// -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
+// -------------------------------------------- TOURS ---------------------------------------------------------//
 
-function toursOptions() {
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer " + token);
+// function toursOptions() {
+//   var myHeaders = new Headers();
+//   myHeaders.append("Authorization", "Bearer " + token);
 
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
+//   var requestOptions = {
+//     method: "GET",
+//     headers: myHeaders,
+//     redirect: "follow",
+//   };
 
-  fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
-    .then(response => response.json())
-    .then(result => console.log('Excursions: ', result))
-    .catch(error => console.log('error', error));
-};
+//   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
+//     .then(response => response.json())
+//     .then((result) => {
+//       console.log("Tours:");
+//       console.log(result);
+
+//       for (var i = 0; i < result.data.length; i++) {
+//         var tourData = result.data[i];
+//         console.log("Tour Data: " + tourData);
+
+//         var tourName = tourData.name;
+//         var tourPic = tourData.pictures[0];
+
+//         //----------TOUR OPTIONS----------//
+//         var tourOptions = document.getElementById("tourOpt" + (i+1));
+//         tourOptions.textContent = "Tour: " + tourName;
+//         console.log("Tour: " + tourName);
+//       }
+//     })
+//     .catch((error) => console.log("error", error));
+// };
 
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
