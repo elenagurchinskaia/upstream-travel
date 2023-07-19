@@ -1,6 +1,8 @@
 // ------------------------- SELECTORS -------------------------//
 var mapEl = document.getElementById("google-map");
 
+var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
+
 // ------------------------- CITY COORDINATES -------------------------//
 
 var city = JSON.parse(localStorage.getItem("selectedCity"));
@@ -37,7 +39,7 @@ function safetyStats() {
   var myHeaders = new Headers();
 
 
-  myHeaders.append("Authorization", "Bearer s7PyIBjjKR4UMRjETI8g7xwI4hnS");
+  myHeaders.append("Authorization", "Bearer" + token);
 
   var requestOptions = {
     method: "GET",
@@ -115,7 +117,7 @@ function safetyStats() {
 
 function foodOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer s7PyIBjjKR4UMRjETI8g7xwI4hnS");
+  myHeaders.append("Authorization", "Bearer" + token);
 
   var requestOptions = {
     method: "GET",
@@ -173,7 +175,7 @@ function sightsOptions() {
 
 function toursOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer Am2PSpEYPR35m7ojVyQ4EP9swTa6");
+  myHeaders.append("Authorization", "Bearer" + token);
 
   var requestOptions = {
     method: "GET",

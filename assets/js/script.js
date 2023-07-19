@@ -16,10 +16,12 @@
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
+var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
+
 var myHeaders = new Headers();
 
 
-myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
+myHeaders.append("Authorization", "Bearer" + token);
 
 var requestOptions = {
   method: "GET",
