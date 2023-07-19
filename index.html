@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upstream Travel | Home</title>
-    <link rel="next" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind&family=Josefin+Slab&family=Quicksand:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
 
-  <body>
-    <nav>
-      <div class="nav-wrapper red lighten-2">
-        <a href="#" class="brand-logo">Upstream Travel</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="./assets/html/developer.html">DEVELOPERS</a></li>
-        </ul>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upstream Travel | Home</title>
+  <!--Hind Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Josefin Slab Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Quicksand Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+    rel="stylesheet">
+  <!--Materialize Library-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <!--------------------------------NAV BAR-------------------------------->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Upstream Travel</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="./assets/html/developer.html">DEVELOPERS</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!--------------------------------MOBILE NAV BAR-------------------------------->
+  <!--BACKGROUND IMAGE-->
+  <section class="bg-img">
     <div>
       <ul id="slide-out" class="sidenav">
         <li>
@@ -36,19 +50,13 @@
             <div class="background">
               <img src="./assets/images/placeholder img.jpeg" />
             </div>
-            <a href="#user"
-              ><img class="circle" src="./assets/images/placeholder img.jpeg"
-            /></a>
+            <a href="#user"><img class="circle" src="./assets/images/placeholder img.jpeg" /></a>
             <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"
-              ><span class="white-text email">jdandturk@gmail.com</span></a
-            >
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
           </div>
         </li>
         <li>
-          <a href="#!"
-            ><i class="material-icons">cloud</i>First Link With Icon</a
-          >
+          <a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a>
         </li>
         <li><a href="#!">Second Link</a></li>
         <li>
@@ -57,27 +65,41 @@
         <li><a class="subheader">Subheader</a></li>
         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
       </ul>
-      <a href="#" data-target="slide-out" class="sidenav-trigger"
-        ><i class="material-icons">menu</i></a
-      >
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+    <!--------------------------------MAIN SECTION-------------------------------->
+    <!--------------------------------SEARCH FORM-------------------------------->
     <form id="search">
-      <div class="hero-text">
-        <h1>Upstream Travel</h1>
-        <p>Slogan goes here</p>
-        <section class="input-field">
-          <input id="cityName" type="text" placeholder="City Name"></input>
-          <!-- <label for="cityName"> City Name</label> -->
-          <button class="search-btn">Search</button>
-          <div id="buttons"></div>
-        </form>
-      </div>
-    </section>
-    <article id="about">
-      <h2>About</h2>
-      <p>Text goes here</p>
-    </article>
-    <div id="#amadeus-api"></div>
-    <script src="./assets/js/script.js"></script>
-  </body>
+      <img src="./assets/images/UpstreamTravel-logo-transp.png">
+      <h1>Upstream Travel</h1>
+      <h2>don't go with the flow</h2>
+      <section class="input-field">
+        <input id="cityName" type="text" placeholder="City Name"></input>
+        <!-- <label for="cityName"> City Name</label> -->
+        <button class="search-btn">Search</button>
+        <div id="buttons"></div>
+      </section>
+    </form>
+  </section>
+  <!--------------------------------ABOUT SECTION-------------------------------->
+  <article id="about">
+    <h3>About</h3>
+    <p>Most travel apps available today suggest traditional travel itineraries, to places that have been well traveled
+      and explored. With Upstream Travel, we want to provide unique travel experiences that will leave travelers with
+      unforgettable memories.</p>
+
+    <p>Current travel apps return only the most popular or highest rated places. Upstream Travel will recommend uncommon
+      places to eat at and explore by filtering results through the lens of a local resident for food and destinations
+      and give you a feel for the adventures you might have with a music track chosen for a vibe check.
+    </p>
+    <img src="./assets/images/travel-img.jpeg" class="travel-img" alt="canoe in lake">
+  </article>
+
+     <!--------------------FOOTER-------------------->
+     <footer class="footer-slogan">don't go with the flow | est. 2023</footer>
+
+  <!--JS LINK-->
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>

@@ -1,68 +1,234 @@
 /* sub head font family - Quicksand, Josefin Slab, Hind */
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Hind&family=Quicksand:wght@700&display=swap");
 
-body {
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.8);
-  font-weight: 400;
-  line-height: 1.58;
-  letter-spacing: -0.003em;
-  font-size: 20px;
+/*----------COLORS----------*/
+:root {
+  --primary: #ecc8af;
+  --secondary: #e7ad99;
+  --tertiary: #ce796b;
+  --ocher: #c18c5d;
+  --dark: #495867;
 }
 
+/*----------FONTS----------*/
+:root {
+  --quicksand: 'Quicksand', sans-serif;
+  --josefin-slab: 'Josefin Slab', serif;
+  --hind: 'Hind', sans-serif;
+}
+
+/*----------------------------------DEFAULT CSS----------------------------------*/
+body {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+/*-----------------------NAV BAR-----------------------*/
+.nav-wrapper {
+  background-color: var(--dark);
+}
+
+.brand-logo {
+  margin-left: 50px;
+  font-family: var(--quicksand);
+}
+
+#nav-mobile {
+  margin-right: 50px;
+}
+
+#nav-mobile li {
+  font-family: var(--quicksand);
+}
+
+/*---------------------------SEARCH SECTION---------------------------*/
 h1 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 38px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.8);
-  -webkit-font-smoothing: antialiased;
+  margin-top: 20;
+  text-align: center;
+  font-family: var(--quicksand);
+  font-size: 90px;
+
 }
 
 h2 {
-  font-family: "Josefin Slab", serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 28px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.8);
-  -webkit-font-smoothing: antialiased;
-}
-
-body,
-html {
-  height: 100%;
-}
-
-.hero-image {
-  /* Linear-gradient" darkens the bakground image which will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5));
-
-  /* Set a specific height */
-  height: 100%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
+  margin-top: 30;
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(0, 0, 0, 0.8);
+  font-family: var(--josefin-slab);
+  font-size: 40px;
 }
-.input-field label {
-  color: #000000;
+
+.bg-img {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ecc8af), url(../images/simon-berger-twukN12EN7c-unsplash.png);
+  background-size: cover;
+  background-position: center center;
+  height: 50vh;
 }
-.input-field input[type="text"]:focus + label {
-  color: #000;
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+form img {
+  margin-top: 0;
+  width: 400px;
+  height: auto;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-btn {
+  font-family: var(--hind);
+  text-align: center;
+  padding: 8px;
+  margin-left: 50px;
+  margin-right: auto;
+  font-size: 20px;
+}
+
+/*---------------------------ABOUT SECTION---------------------------*/
+#about {
+  background-color: var(--primary);
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  text-align: center;
+  font-family: var(--quicksand);
+  font-size: 60px;
+}
+
+#about p {
+  text-align: center;
+  font-family: var(--hind);
+  font-size: 25px;
+}
+
+.travel-img {
+  margin-top: 50px;
+  width: 100%;
+  border-radius: 100px;
+}
+
+/*---------------------------FOOTER---------------------------*/
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 500px;
+}
+
+/*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
+@media screen and (max-width: 780px) {
+
+  /*---------------SEARCH SECTION---------------*/
+  h1 {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  form {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  form img {
+    width: 200px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  /*---------------ABOUT SECTION---------------*/
+  h3 {
+    font-size: 30px;
+  }
+
+  #about {
+    background-color: var(--primary);
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 50px;
+  }
+
+  #about p {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-size: 20px;
+  }
+
+  /*---------------------------FOOTER---------------------------*/
+  footer {
+    margin-top: 400px;
+    font-size: 20px;
+  }
+
+}
+
+/*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
+@media screen and (min-width: 781px) and (max-width: 1366px) {
+
+  /*---------------SEARCH SECTION---------------*/
+  h1 {
+    font-size: 60px;
+    margin-top: 120px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  form {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  form img {
+    width: 300px;
+  }
+
+  .search-btn {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  /*---------------ABOUT SECTION---------------*/
+  h3 {
+    font-size: 40px;
+  }
+
+  #about {
+    background-color: var(--primary);
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 200px;
+  }
+
+  #about p {
+    font-size: 20px;
+  }
+
+  /*---------------------------FOOTER---------------------------*/
+  footer {
+    margin-top: 200px;
+  }
+
 }
