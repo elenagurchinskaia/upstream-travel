@@ -12,6 +12,7 @@
 //use localStorage to setItem for the coordinates variable
 //redirect the user to the city-info.html
 
+
 // -------------------------------------------- UPDATE THE TOKEN AUTOMATICALLY ---------------------------------------------------------//
 var accessToken = ""; // Store the access token
 var expirationTime = 0; // Store the expiration time
@@ -85,21 +86,22 @@ var requestOptions = {
   redirect: "follow",
 };
 
+// -------------------------------------------- GETS CITY INFO DATA ---------------------------------------------------------//
 function getCityInfo(event) {
   event.preventDefault();
+
   console.log(accessToken);
   var city = document
     .getElementById("cityName")
     .value.trim()
     .replace(" ", "%20");
+
+
+  var city = document.getElementById("cityName").value.trim().replace(" ", "%20");
+
   console.log(city);
 
-  fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-      city +
-      "&max=5",
-    requestOptions
-  )
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" + city + "&max=5", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
@@ -116,14 +118,13 @@ function getCityInfo(event) {
         var latitude = cityData.geoCode.latitude;
         var longitude = cityData.geoCode.longitude;
 
-        // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
-
         createCityButton(cityName, stateCode, countryCode, latitude, longitude);
       }
     })
     .catch((error) => console.log("error", error));
-}
+};
 
+// -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 function createCityButton(
   cityName,
   stateCode,
@@ -152,16 +153,19 @@ function createCityButton(
   });
 
   buttonContainer.appendChild(cityBtn);
+
 }
 // renewToken();
 makeAPIRequest();
-// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
+// -------------------------------------------- SIDE NAV ---------------------------------------------------------//
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
   var instances = M.Sidenav.init(elems);
 });
 
-// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
+
+
+// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 searchBtn.addEventListener("click", getCityInfo);
