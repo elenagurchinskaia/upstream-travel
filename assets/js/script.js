@@ -18,6 +18,7 @@ var buttonContainer = document.getElementById("buttons");
 
 var myHeaders = new Headers();
 
+
 myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
 
 var requestOptions = {
@@ -29,31 +30,28 @@ var requestOptions = {
 function getCityInfo(event) {
   event.preventDefault();
 
-  var city = document.getElementById("cityName").value;
+  var city = document.getElementById("cityName").value.trim().replace(" ", "%20");
   console.log(city);
 
   fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
-      city +
-      "&max=5",
-    requestOptions
-  )
+    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" + city + "&max=5", requestOptions)
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data.data);
+    .then((result) => {
+      console.log(result.data);
 
       buttonContainer.innerHTML = "";
 
-      for (var i = 0; i < data.data.length; i++) {
-        var cityData = data.data[i];
-        console.log(cityData);
+      for (var i = 0; i < result.data.length; i++) {
+        var cityData = result.data[i];
+        console.log("Results: ");
+        console.log(result.data[i]);
         var cityName = cityData.name;
         var stateCode = cityData.address.stateCode;
         var countryCode = cityData.address.countryCode;
-        var latitude = cityData.geoCode.latitude;
-        var longitude = cityData.geoCode.longitude;
+        var cityKey = cityName + ", " + stateCode + "; " + countryCode;
 
         // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
+
         createCityButton(cityName, stateCode, countryCode, latitude, longitude);
       }
     })
