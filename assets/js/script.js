@@ -12,10 +12,64 @@
 //use localStorage to setItem for the coordinates variable
 //redirect the user to the city-info.html
 
-// -------------------------------------------- GETS CITY INPUT DATA ---------------------------------------------------------//
+// -------------------------------------------- UPDATE THE TOKEN AUTOMATICALLY ---------------------------------------------------------//
+var accessToken = ""; // Store the access token
+var expirationTime = 0; // Store the expiration time
+
+// Function to check if the token has expired
+function isTokenExpired() {
+  var currentTime = Math.floor(Date.now() / 1000); // Get the current time in seconds
+  return currentTime >= expirationTime;
+}
+
+// Function to obtain a new access token
+function getNewToken() {
+  fetch("https://test.api.amadeus.com/v1/security/oauth2/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "grant_type=client_credentials&client_id=G4Vu52uzLiUQyAVGDnAbEDtLeAtPQOXr&client_secret=TKyTOVRXZ9Eae0oX",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      accessToken = data.access_token;
+      expirationTime = Math.floor(Date.now() / 1000) + data.expires_in;
+      console.log("New token obtained:", accessToken);
+    })
+    .catch((error) => {
+      console.error("Error fetching new token:", error);
+    });
+}
+
+// Function to automatically renew the token
+function renewToken() {
+  if (isTokenExpired()) {
+    getNewToken();
+  }
+
+  // Schedule the next token renewal
+  setTimeout(renewToken, 30 * 60 * 1000);
+}
+
+// Start the token renewal process
+renewToken();
+
+// make a new request
+function makeAPIRequest() {
+  // Check if the token is expired and renew it if needed
+  if (isTokenExpired()) {
+    getNewToken();
+  }
+}
+
+makeAPIRequest();
+
+// -------------------------------------------- SELECTORS---------------------------------------------------------//
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
+// -------------------------------------------- GETS CITY INPUT DATA ---------------------------------------------------------//
 var myHeaders = new Headers();
 
 myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
@@ -97,3 +151,13 @@ function createCityButton(
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
 searchBtn.addEventListener("click", getCityInfo);
+
+// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".sidenav");
+  var instance = M.Sidenav.init(elems, options);
+  instance.open();
+  instance.close();
+  instance.destroy();
+});
