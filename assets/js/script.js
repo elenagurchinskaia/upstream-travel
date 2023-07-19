@@ -19,8 +19,7 @@ var buttonContainer = document.getElementById("buttons");
 var myHeaders = new Headers();
 
 
-myHeaders.append("Authorization", "Bearer WyCVQ8oytluME1wxwhZvUyz24zQx");
-
+myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
 
 var requestOptions = {
   method: "GET",
@@ -52,31 +51,42 @@ function getCityInfo(event) {
         var cityKey = cityName + ", " + stateCode + "; " + countryCode;
 
         // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
-        var cityBtn = document.createElement("button");
-        cityBtn.textContent = cityName + ", " + stateCode + "; " + countryCode;
 
-        // add lat and long as data-attributes to cityBtn
-
-        cityBtn.addEventListener("click", function (event) {
-          event.preventDefault();
-          var selectedCity = {
-            "City Name": cityData.name,
-            longitude: cityData.geoCode.longitude,
-            latitude: cityData.geoCode.latitude,
-          };
-
-          localStorage.setItem(cityKey, "selectedCity", JSON.stringify(selectedCity));
-          console.log(selectedCity);
-          console.log("target: " + event.target);
-          // window.location.href = "city-info.html";
-        });
-
-        buttonContainer.appendChild(cityBtn);
+        createCityButton(cityName, stateCode, countryCode, latitude, longitude);
       }
     })
     .catch((error) => console.log("error", error));
 }
 
+function createCityButton(
+  cityName,
+  stateCode,
+  countryCode,
+  latitude,
+  longitude
+) {
+  var cityBtn = document.createElement("button");
+  cityBtn.textContent = cityName + ", " + stateCode + "; " + countryCode;
+  // Add lat and long as data attributes to cityBtn
+  cityBtn.dataset.latitude = latitude;
+  cityBtn.dataset.longitude = longitude;
+
+  cityBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    var selectedCity = {
+      cityName: cityName,
+      longitude: this.dataset.longitude,
+      latitude: this.dataset.latitude,
+    };
+
+    localStorage.setItem("selectedCity", JSON.stringify(selectedCity));
+    console.log(selectedCity);
+
+    window.location.href = "city-info.html";
+  });
+
+  buttonContainer.appendChild(cityBtn);
+}
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
 searchBtn.addEventListener("click", getCityInfo);

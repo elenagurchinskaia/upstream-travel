@@ -27,12 +27,15 @@ function cityMap() {
     city.cityName.replace(" ", "%20");
   console.log(source);
   mapEl.setAttribute("src", source);
+
 };
+
 
 // -------------------------------------------- SAFETY STATS ---------------------------------------------------------//
 
 function safetyStats() {
   var myHeaders = new Headers();
+
 
   myHeaders.append("Authorization", "Bearer s7PyIBjjKR4UMRjETI8g7xwI4hnS");
 
@@ -42,10 +45,19 @@ function safetyStats() {
     redirect: "follow",
   };
 
-  fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" + lat + "&longitude=-" + lon + "&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-      console.log('Safety Stats: ');
+
+  fetch(
+    "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" +
+      lat +
+      "&longitude=-" +
+      lon +
+      "&page%5Blimit%5D=1&page%5Boffset%5D=0",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => {
+      console.log("Safety Stats: ");
+
       console.log(result);
 
       var safetyData = result.data[0].safetyScores;
@@ -70,28 +82,29 @@ function safetyStats() {
 
       // //----------MEDICAL SCORE----------//
 
+
       var medicalScore = document.getElementById('medicalScore');
+
       medicalScore.textContent = medicalNum;
       console.log(medicalNum);
 
-
       //----------HARM SCORE----------//
-      var physicalHarmScore = document.getElementById('harmScore');
+      var physicalHarmScore = document.getElementById("harmScore");
       physicalHarmScore.textContent = physicalHarmNum;
       console.log(physicalHarmNum);
 
       //----------POLITICAL SCORE----------//
-      var politicalFreedomScore = document.getElementById('politicalScore');
+      var politicalFreedomScore = document.getElementById("politicalScore");
       politicalFreedomScore.textContent = politicalFreedomNum;
       console.log(politicalFreedomNum);
 
       //----------THEFT SCORE----------//
-      var theftScore = document.getElementById('theftScore');
+      var theftScore = document.getElementById("theftScore");
       theftScore.textContent = theftNum;
       console.log(theftNum);
 
       //----------WOMEN SCORE----------//
-      var womenScore = document.createElement('womenScore');
+      var womenScore = document.createElement("womenScore");
       womenScore.textContent = womenNum;
       console.log(womenNum);
     })
@@ -136,7 +149,6 @@ function foodOptions() {
     .catch((error) => console.log("error", error));
 };
 
-
 // -------------------------------------------- PLACES OF INTEREST ---------------------------------------------------------//
 
 function sightsOptions() {
@@ -149,23 +161,24 @@ function sightsOptions() {
     redirect: "follow",
   };
 
+
   fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
     .then(response => response.json())
     .then(result => console.log('Places of Interest: ', result))
     .catch(error => console.log('error', error));
 };
 
+
 // -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
 
 function toursOptions() {
-
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer Am2PSpEYPR35m7ojVyQ4EP9swTa6");
 
   var requestOptions = {
-    method: 'GET',
+    method: "GET",
     headers: myHeaders,
-    redirect: 'follow'
+    redirect: "follow",
   };
 
   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
@@ -173,6 +186,7 @@ function toursOptions() {
     .then(result => console.log('Excursions: ', result))
     .catch(error => console.log('error', error));
 };
+
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
