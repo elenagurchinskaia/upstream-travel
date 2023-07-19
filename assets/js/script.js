@@ -16,9 +16,20 @@
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
+var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
+
 var myHeaders = new Headers();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+myHeaders.append("Authorization", "Bearer" + token);
+=======
 myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
+>>>>>>> 5812b2c17cd4d0ea42af9b710d7aff4de913de7c
+=======
+myHeaders.append("Authorization", "Bearer" + token);
+>>>>>>> ba144429c2030e419a53168fcb3afad7920603bf
 
 var requestOptions = {
   method: "GET",
