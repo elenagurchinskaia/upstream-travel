@@ -12,9 +12,8 @@
 //use localStorage to setItem for the coordinates variable
 //redirect the user to the city-info.html
 
-
 // -------------------------------------------- UPDATE THE TOKEN AUTOMATICALLY ---------------------------------------------------------//
-var accessToken = ""; // Store the access token
+var accessToken = localStorage.getItem("accessToken") || ""; // Store the access token
 var expirationTime = 0; // Store the expiration time
 
 // Function to check if the token has expired
@@ -30,11 +29,12 @@ function getNewToken() {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: "grant_type=client_credentials&client_id=G4Vu52uzLiUQyAVGDnAbEDtLeAtPQOXr&client_secret=TKyTOVRXZ9Eae0oX",
+    body: "grant_type=client_credentials&client_id=TNLOG5XIHDMeZzAVHk978untusOcm8Ez&client_secret=y4pSgTSVZRbT6EFE",
   })
     .then((response) => response.json())
     .then((data) => {
       accessToken = data.access_token;
+      localStorage.setItem("accessToken", accessToken);
       expirationTime = Math.floor(Date.now() / 1000) + data.expires_in;
       console.log("New token obtained:", accessToken);
       // var token = document.getElementById("token");
@@ -96,12 +96,19 @@ function getCityInfo(event) {
     .value.trim()
     .replace(" ", "%20");
 
-
-  var city = document.getElementById("cityName").value.trim().replace(" ", "%20");
+  var city = document
+    .getElementById("cityName")
+    .value.trim()
+    .replace(" ", "%20");
 
   console.log(city);
-
-  fetch("https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" + city + "&max=5", requestOptions)
+  var reqUrl =
+    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
+    city +
+    "&max=5";
+  // requestOptions;
+  console.log(reqUrl);
+  fetch(reqUrl, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
@@ -122,7 +129,7 @@ function getCityInfo(event) {
       }
     })
     .catch((error) => console.log("error", error));
-};
+}
 
 // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 function createCityButton(
@@ -153,7 +160,6 @@ function createCityButton(
   });
 
   buttonContainer.appendChild(cityBtn);
-
 }
 // renewToken();
 makeAPIRequest();
@@ -163,9 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
   var instances = M.Sidenav.init(elems);
 });
-
-
-
 
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 searchBtn.addEventListener("click", getCityInfo);

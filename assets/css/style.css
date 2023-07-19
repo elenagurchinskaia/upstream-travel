@@ -12,9 +12,9 @@
 
 /*----------FONTS----------*/
 :root {
-  --quicksand: 'Quicksand', sans-serif;
-  --josefin-slab: 'Josefin Slab', serif;
-  --hind: 'Hind', sans-serif;
+  --quicksand: "Quicksand", sans-serif;
+  --josefin-slab: "Josefin Slab", serif;
+  --hind: "Hind", sans-serif;
 }
 
 /*----------------------------------DEFAULT CSS----------------------------------*/
@@ -47,7 +47,6 @@ h1 {
   text-align: center;
   font-family: var(--quicksand);
   font-size: 90px;
-
 }
 
 h2 {
@@ -58,10 +57,11 @@ h2 {
 }
 
 .bg-img {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ecc8af), url(../images/simon-berger-twukN12EN7c-unsplash.png);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ecc8af),
+    url(../images/simon-berger-twukN12EN7c-unsplash.png);
   background-size: cover;
   background-position: center center;
-  height: 50vh;
+  height: 1000px;
 }
 
 form {
@@ -132,7 +132,6 @@ footer {
 
 /*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
-
   /*---------------SEARCH SECTION---------------*/
   h1 {
     font-size: 40px;
@@ -180,12 +179,10 @@ footer {
     margin-top: 400px;
     font-size: 20px;
   }
-
 }
 
 /*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
 @media screen and (min-width: 781px) and (max-width: 1366px) {
-
   /*---------------SEARCH SECTION---------------*/
   h1 {
     font-size: 60px;
@@ -230,5 +227,4 @@ footer {
   footer {
     margin-top: 200px;
   }
-
 }

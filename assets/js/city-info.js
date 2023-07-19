@@ -1,7 +1,8 @@
 // ------------------------- SELECTORS -------------------------//
 var mapEl = document.getElementById("google-map");
 
-var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g"
+// var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g";
+var token = localStorage.getItem("accessToken") || "";
 
 // ------------------------- CITY COORDINATES -------------------------//
 
@@ -22,26 +23,20 @@ var APIkey = "AIzaSyBdXT-Im1q-WtbYM6fqm32GLH_ZVCbt2M4";
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
 function cityMap() {
-  var source = "https://www.google.com/maps/embed/v1/place?key=" + APIkey + "&q=" + city.cityName.replace(" ", "%20");
+  var source =
+    "https://www.google.com/maps/embed/v1/place?key=" +
+    APIkey +
+    "&q=" +
+    city.cityName.replace(" ", "%20");
   console.log(source);
   mapEl.setAttribute("src", source);
-
 }
-
-
-
-
 
 // -------------------------------------------- SAFETY STATS ---------------------------------------------------------//
 
 function safetyStats() {
   var myHeaders = new Headers();
-
-
- 
-
   myHeaders.append("Authorization", "Bearer " + token);
-
 
   var requestOptions = {
     method: "GET",
@@ -49,18 +44,14 @@ function safetyStats() {
     redirect: "follow",
   };
 
-
   fetch(
     "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" +
       lat +
-      "&longitude=-" +
+      "&longitude=" +
       lon +
-      "&page%5Blimit%5D=1&page%5Boffset%5D=0",
+      "&radius=2",
     requestOptions
   )
-
-
-
     .then((response) => response.json())
     .then((result) => {
       console.log("Safety Stats: ");
@@ -71,7 +62,8 @@ function safetyStats() {
       var lgbtqNum = "LGBTQ+: " + safetyData.lgbtq;
       var medicalNum = "Medical: " + safetyData.medical;
       var physicalHarmNum = "Physical Harm: " + safetyData.physicalHarm;
-      var politicalFreedomNum = "Political Freedom: " + safetyData.politicalFreedom;
+      var politicalFreedomNum =
+        "Political Freedom: " + safetyData.politicalFreedom;
       var theftNum = "Theft: " + safetyData.theft;
       var womenNum = "Women's Safety: " + safetyData.women;
 
@@ -87,11 +79,7 @@ function safetyStats() {
 
       // //----------MEDICAL SCORE----------//
 
-
       var medicalScore = document.getElementById("medicalScore");
-
-
-    
 
       medicalScore.textContent = medicalNum;
       console.log(medicalNum);
@@ -131,7 +119,14 @@ function foodOptions() {
     redirect: "follow",
   };
 
-  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT", requestOptions)
+  fetch(
+    "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" +
+      lat +
+      "&longitude=" +
+      lon +
+      "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=RESTAURANT",
+    requestOptions
+  )
     .then((response) => response.json())
     .then((result) => {
       console.log("Food:");
@@ -166,23 +161,27 @@ function sightsOptions() {
     redirect: "follow",
   };
 
+  fetch(
+    "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" +
+      lat +
+      "&longitude=" +
+      lon +
+      "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => console.log("Places of Interest: ", result))
+    .catch((error) => console.log("error", error));
 
   fetch(
     "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" +
       lat +
       "&longitude=" +
       lon +
-      "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS",
+      "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS",
     requestOptions
   )
     .then((response) => response.json())
-    .then((result) => console.log("Places of Interest: ", result))
-    .catch((error) => console.log("error", error));
-}
-
-
-  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
-    .then(response => response.json())
     .then((result) => {
       console.log("Sights:");
       console.log(result);
@@ -196,27 +195,25 @@ function sightsOptions() {
         var poiRating = poiData.rank + "/5 STARS";
 
         //----------SIGHT OPTIONS----------//
-        var poiOptions = document.getElementById("poiOpt" + (i+1));
+        var poiOptions = document.getElementById("poiOpt" + (i + 1));
         poiOptions.textContent = type + " " + poiName + " " + poiRating;
         console.log(type + " " + poiName + " " + poiRating);
       }
     })
     .catch((error) => console.log("error", error));
-};
-
-
+}
 
 // -------------------------------------------- TOURS ---------------------------------------------------------//
 
-// function toursOptions() {
-//   var myHeaders = new Headers();
-//   myHeaders.append("Authorization", "Bearer " + token);
+function toursOptions() {
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer " + token);
 
-//   var requestOptions = {
-//     method: "GET",
-//     headers: myHeaders,
-//     redirect: "follow",
-//   };
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
 
   fetch(
     "https://test.api.amadeus.com/v1/shopping/activities?latitude=" +
@@ -229,7 +226,7 @@ function sightsOptions() {
     .then((response) => response.json())
     .then((result) => console.log("Excursions: ", result))
     .catch((error) => console.log("error", error));
-};
+}
 
 //   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
 //     .then(response => response.json())
@@ -253,8 +250,6 @@ function sightsOptions() {
 //     .catch((error) => console.log("error", error));
 // };
 
-
-
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
 cityMap();
@@ -269,7 +264,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
   var instances = M.Sidenav.init(elems);
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
