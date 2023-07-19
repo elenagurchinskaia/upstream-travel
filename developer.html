@@ -30,27 +30,47 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="../css/developer.css" />
+    <link rel="stylesheet" href="./assets/css/developer.css" />
   </head>
 
   <body>
     <!--------------------------------NAV BAR-------------------------------->
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Upstream</a>
+        <a href="./index.html" class="brand-logo">Upstream Travel</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/index.html">HOME</a></li>
-          <li><a href="/index.html #about">ABOUT</a></li>
-          <li><a href="../html/developer.html">DEVELOPERS</a></li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="/index.html">ABOUT</a></li>
+          <li><a href="/developer.html">DEVELOPERS</a></li>
         </ul>
       </div>
     </nav>
     <main class="cards">
+      <!--------------------------------SIDE NAV-------------------------------->
+      <div>
+        <ul id="slide-out" class="sidenav">
+          <li>
+            <div class="user-view">
+              <div class="background"><img src="./assets/images/simon-berger-twukN12EN7c-unsplash.png" /></div>
+  
+              <a href="./index.html"><img class="circle" src="./assets/images/upstream-logo-w-bg.png" /></a>
+              <a href="#name"><span class="white-text name">Upstream Travel</span></a>
+              <a href="#email"><span class="white-text email">don't go with the flow</span></a>
+            </div>
+          </li>
+          <li><a class="waves-effect" href="./index.html">Home</a>
+          <li><a class="waves-effect" href="./index.html">About</a></li>
+          <li><a class="waves-effect" href="./developer.html">Developers</a></li>
+        </ul>
+      </div>
+      </li><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a></div>
+
+
       <!--------------------------------ELENA CARD-------------------------------->
       <div class="elena">
         <!---------IMAGE--------->
         <img
-          src="../images/elena headshot.jpeg"
+          src="./assets/images/elena headshot.jpeg"
           alt="placeholder"
           class="profile-img"
         />
@@ -62,7 +82,7 @@
           <ul>
             <li>
               <img
-                src="../images/linkedin icon.png"
+                src="./assets/images/linkedin icon.png"
                 alt="linkedin icon"
                 class="linkedin"
               />
@@ -74,7 +94,7 @@
             </li>
             <li>
               <img
-                src="../images/github icon.png"
+                src="./assets/images/github icon.png"
                 alt="github icon"
                 class="github"
               />
@@ -84,7 +104,7 @@
             </li>
             <li>
               <img
-                src="../images/coding icon.png"
+                src="./assets/images/coding icon.png"
                 alt="github icon"
                 class="portfolio"
               />
@@ -96,7 +116,7 @@
             </li>
             <li>
               <img
-                src="../images/email icon.png"
+                src="./assets/images/email icon.png"
                 alt="email icon"
                 class="email"
               />
@@ -121,7 +141,7 @@
       <div class="stephanie">
         <!---------IMAGE--------->
         <img
-          src="../images/placeholder img.jpeg"
+          src="./assets/images/head_shot_sml_v3.jpeg"
           alt="placeholder"
           class="profile-img"
         />
@@ -133,7 +153,7 @@
           <ul>
             <li>
               <img
-                src="../images/linkedin icon.png"
+                src="./assets/images/linkedin icon.png"
                 alt="linkedin icon"
                 class="linkedin"
               />
@@ -143,7 +163,7 @@
             </li>
             <li>
               <img
-                src="../images/github icon.png"
+                src="./assets/images/github icon.png"
                 alt="github icon"
                 class="github"
               />
@@ -151,7 +171,7 @@
             </li>
             <li>
               <img
-                src="../images/coding icon.png"
+                src="./assets/images/coding icon.png"
                 alt="github icon"
                 class="portfolio"
               />
@@ -163,7 +183,7 @@
             </li>
             <li>
               <img
-                src="../images/email icon.png"
+                src="./assets/images/email icon.png"
                 alt="email icon"
                 class="email"
               />
@@ -188,7 +208,7 @@
       <div class="lainey">
         <!---------IMAGE--------->
         <img
-          src="../images/santa-monica.JPG"
+          src="./assets/images/santa-monica.JPG"
           alt="placeholder"
           class="profile-img"
         />
@@ -200,7 +220,7 @@
           <ul>
             <li>
               <img
-                src="../images/linkedin icon.png"
+                src="./assets/images/linkedin icon.png"
                 alt="linkedin icon"
                 class="linkedin"
               />
@@ -212,7 +232,7 @@
             </li>
             <li>
               <img
-                src="../images/github icon.png"
+                src="./assets/images/github icon.png"
                 alt="github icon"
                 class="github"
               />
@@ -222,7 +242,7 @@
             </li>
             <li>
               <img
-                src="../images/coding icon.png"
+                src="./assets/images/coding icon.png"
                 alt="github icon"
                 class="portfolio"
               />
@@ -234,7 +254,7 @@
             </li>
             <li>
               <img
-                src="../images/email icon.png"
+                src="./assets/images/linkedin icon.png"
                 alt="email icon"
                 class="email"
               />
@@ -256,5 +276,9 @@
         </article>
       </div>
     </main>
+    <!--------------------MATERIALIZE-------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--------------------JS------------------->
+    <script src="./assets/js/developers.js"></script>
   </body>
 </html>

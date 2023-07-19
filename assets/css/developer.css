@@ -1,266 +1,267 @@
 /*----------COLORS----------*/
 :root {
-    --primary: #ecc8af;
-    --secondary: #e7ad99;
-    --tertiary: #ce796b;
-    --ocher: #c18c5d;
-    --dark: #495867;
-  }
+  --primary: #ecc8af;
+  --secondary: #e7ad99;
+  --tertiary: #ce796b;
+  --ocher: #c18c5d;
+  --dark: #495867;
+}
 
-  /*----------FONTS----------*/
+/*----------FONTS----------*/
 :root {
-    --quicksand: 'Quicksand', sans-serif;
-    --josefin-slab: 'Josefin Slab', serif;
-    --hind: 'Hind', sans-serif;
+  --quicksand: "Quicksand", sans-serif;
+  --josefin-slab: "Josefin Slab", serif;
+  --hind: "Hind", sans-serif;
 }
 
 /*----------------------------------DEFAULT CSS----------------------------------*/
 /*-----------------------NAV BAR-----------------------*/
 .nav-wrapper {
-    background-color: var(--dark);
-  }
-  
+  background-color: var(--dark);
+}
+
+.brand-logo {
+  margin-left: 50px;
+  font-family: var(--quicksand);
+}
+
 /*----------MAIN BODY----------*/
 .cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
 }
 
 .cards div {
-    background-color: whitesmoke;
-    box-shadow: 4px 8px 8px 2px var(--ocher);
+  background-color: whitesmoke;
+  box-shadow: 4px 8px 8px 2px var(--ocher);
 }
 
 /*----------DEV CARDS----------*/
 .cards div {
-    margin: 10px;
-    border-radius: 25px;
+  margin: 10px;
+  border-radius: 25px;
 }
 
 /*----------NAME----------*/
 h1 {
-    color: var(--dark);
-    padding: 50px;
-    font-family: var(--quicksand);
-    font-size: 45px;
-    text-align: center;
+  color: var(--dark);
+  padding: 50px;
+  font-family: var(--quicksand);
+  font-size: 45px;
+  text-align: center;
 }
 
 /*----------IMAGE----------*/
 .profile-img {
-    width: 375px;
-    height: auto;
-    border: var(--ocher) solid 5px;
-    border-radius: 50%;
-    display: block;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 375px;
+  height: auto;
+  border: var(--ocher) solid 5px;
+  border-radius: 50%;
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*---------------ARTICLE---------------*/
 h2 {
-    color: var(--dark);
-    font-family: var(--josefin-slab);
-    font-size: 40px;
-    margin: 10px;
+  color: var(--dark);
+  font-family: var(--josefin-slab);
+  font-size: 40px;
+  margin: 10px;
 }
 
 article {
-    padding: 25px;
+  padding: 25px;
 }
 
 /*----------CONTACT----------*/
 article ul {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 }
 
 article ul li {
-    color: var(--dark);
-    font-family: var(--hind);
-    display: flex;
-    align-items: center;
-    margin: 10px;
+  color: var(--dark);
+  font-family: var(--hind);
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }
 
 .linkedin,
 .github,
 .portfolio,
 .email {
-    width: auto;
-    height: 25px;
+  width: auto;
+  height: 25px;
 }
 
 article a {
-    font-size: 20px;
-    margin-left: 30px;
+  font-size: 20px;
+  margin-left: 30px;
 }
 
 /*----------ABOUT & CONTRIBUTIONS----------*/
 article p {
-    color: var(--dark);
-    font-family: var(--hind);
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 100px;
-    line-height: 1.5rem;
+  color: var(--dark);
+  font-family: var(--hind);
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 100px;
+  line-height: 1.5rem;
 }
 
 /*----------------------------------MEDIA QUERIES - PHONE----------------------------------*/
 @media screen and (max-width: 780px) {
+  /*----------MAIN BODY----------*/
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
 
-    /*----------MAIN BODY----------*/
-    .cards {
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-    }
+  /*----------DEV CARDS----------*/
+  .cards div {
+    margin: 10px;
+    border-radius: 25px;
+  }
 
-    /*----------DEV CARDS----------*/
-    .cards div {
-        margin: 10px;
-        border-radius: 25px;
-    }
+  /*----------NAME----------*/
+  h1 {
+    padding: 5px;
+    font-size: 50px;
+    text-align: center;
+  }
 
-    /*----------NAME----------*/
-    h1 {
-        padding: 5px;
-        font-size: 50px;
-        text-align: center;
-    }
+  /*----------IMAGE----------*/
+  .profile-img {
+    width: 250px;
+    height: auto;
+    border: var(--ocher) solid 5px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    /*----------IMAGE----------*/
-    .profile-img {
-        width: 250px;
-        height: auto;
-        border: var(--ocher) solid 5px;
-        border-radius: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  /*---------------ARTICLE---------------*/
+  h2 {
+    font-size: 30px;
+    margin: 10px;
+  }
 
-    /*---------------ARTICLE---------------*/
-    h2 {
-        font-size: 30px;
-        margin: 10px;
-    }
+  article {
+    padding: 5px;
+  }
 
-    article {
-        padding: 5px;
-    }
+  /*----------CONTACT----------*/
+  article ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+  }
 
-    /*----------CONTACT----------*/
-    article ul {
-        display: flex;
-        flex-direction: column;
-        margin-left: 50px;
-    }
+  article ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
 
-    article ul li {
-        display: flex;
-        align-items: center;
-        margin: 10px;
-    }
+  .linkedin,
+  .github,
+  .portfolio,
+  .email {
+    width: auto;
+    height: 35px;
+  }
 
-    .linkedin,
-    .github,
-    .portfolio,
-    .email {
-        width: auto;
-        height: 35px;
-    }
+  article a {
+    font-size: 20px;
+    margin: 15px;
+  }
 
-    article a {
-        font-size: 20px;
-        margin: 15px;
-    }
-
-    /*----------ABOUT & CONTRIBUTIONS----------*/
-    article p {
-        font-size: 20px;
-        margin-left: 50px;
-        margin-right: 50px;
-        line-height: 1.5rem;
-    }
-
+  /*----------ABOUT & CONTRIBUTIONS----------*/
+  article p {
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    line-height: 1.5rem;
+  }
 }
 
 /*----------------------------------MEDIA QUERIES - TABLET----------------------------------*/
 @media screen and (min-width: 781px) and (max-width: 1366px) {
+  /*----------MAIN BODY----------*/
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
 
-    /*----------MAIN BODY----------*/
-    .cards {
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-    }
+  /*----------DEV CARDS----------*/
+  .cards div {
+    margin: 20px;
+    border-radius: 25px;
+  }
 
-    /*----------DEV CARDS----------*/
-    .cards div {
-        margin: 20px;
-        border-radius: 25px;
-    }
+  /*----------NAME----------*/
+  h1 {
+    font-size: 70px;
+    text-align: center;
+  }
 
-    /*----------NAME----------*/
-    h1 {
+  /*----------IMAGE----------*/
+  .profile-img {
+    width: 350px;
+    height: auto;
+    border: var(--ocher) solid 5px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-        font-size: 70px;
-        text-align: center;
-    }
+  /*---------------ARTICLE---------------*/
+  h2 {
+    font-size: 50px;
+    margin: 30px;
+  }
 
-    /*----------IMAGE----------*/
-    .profile-img {
-        width: 350px;
-        height: auto;
-        border: var(--ocher) solid 5px;
-        border-radius: 50%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  /*----------CONTACT----------*/
+  article ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+  }
 
-    /*---------------ARTICLE---------------*/
-    h2 {
-        font-size: 50px;
-        margin: 30px;
-    }
+  article ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
 
-    /*----------CONTACT----------*/
-    article ul {
-        display: flex;
-        flex-direction: column;
-        margin-left: 100px;
-    }
+  .linkedin,
+  .github,
+  .portfolio,
+  .email {
+    width: auto;
+    height: 50px;
+  }
 
-    article ul li {
-        display: flex;
-        align-items: center;
-        margin: 10px;
-    }
+  article a {
+    font-size: 30px;
+    margin-left: 30px;
+  }
 
-    .linkedin,
-    .github,
-    .portfolio,
-    .email {
-        width: auto;
-        height: 50px;
-    }
-
-    article a {
-        font-size: 30px;
-        margin-left: 30px;
-    }
-
-    /*----------ABOUT & CONTRIBUTIONS----------*/
-    article p {
-        font-size: 30px;
-        margin-left: 100px;
-        margin-right: 100px;
-        line-height: 1.5rem;
-    }
+  /*----------ABOUT & CONTRIBUTIONS----------*/
+  article p {
+    font-size: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 1.5rem;
+  }
 }
