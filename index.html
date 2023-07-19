@@ -1,6 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upstream Travel | Home</title>
+    <link rel="next" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind&family=Josefin+Slab&family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+     <!--Hind Font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Hind:wght@300&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+       rel="stylesheet"
+     />
+     <!--Josefin Slab Font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Slab:wght@100;300&family=Playfair+Display:wght@500&family=Quicksand:wght@300&family=Ysabeau+SC:wght@300&display=swap"
+       rel="stylesheet"
+     />
+     <!--Quicksand Font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--Materialize Library-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+
+    <!--------------------NAV BAR-------------------->
+    <nav>
+      <div class="nav-wrapper red lighten-2">
+        <a href="#" class="brand-logo">Upstream Travel</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="./assets/html/developer.html">DEVELOPERS</a></li>
+        </ul>
+      </div>
+    </nav>
+
+     <!--------------------SIDE NAV-------------------->
+
+
+
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,13 +102,28 @@
   <!--------------------------------MOBILE NAV BAR-------------------------------->
   <!--BACKGROUND IMAGE-->
   <section class="bg-img">
+
     <div>
       <ul id="slide-out" class="sidenav">
         <li>
           <div class="user-view">
             <div class="background">
-              <img src="./assets/images/placeholder img.jpeg" />
+              <img src="./assets/images/simon-berger-twukN12EN7c-unsplash.png" />
             </div>
+
+            <a href="#user"
+              ><img class="circle" src="./assets/images/upstream-logo-w-bg.png"
+            /></a>
+            <a href="#name"><span class="white-text name">Upstream Travel</span></a>
+            <a href="#email"
+              ><span class="white-text email">don't go with the flow</span></a
+            >
+          </div>
+        </li>
+        <li>
+          <a href="#!">Home</a
+          >
+
             <a href="#user"><img class="circle" src="./assets/images/placeholder img.jpeg" /></a>
             <a href="#name"><span class="white-text name">John Doe</span></a>
             <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
@@ -57,16 +131,42 @@
         </li>
         <li>
           <a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a>
+
         </li>
-        <li><a href="#!">Second Link</a></li>
-        <li>
-          <div class="divider"></div>
-        </li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a href="#!">About</a></li>
+        
+        <li><a class="waves-effect" href="#!">Developers</a></li> 
       </ul>
       <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
+
+
+
+    <!--------------------SEARCH FORM-------------------->
+    <!-- <input type="text" id="token-input" placeholder="insert-new-token"></input>
+    <button id="submit">Submit</button>
+    <h1 id="token"></h1> -->
+    <form id="search">
+      <div class="hero-text">
+        <h1>Upstream Travel</h1>
+        <p>Slogan goes here</p>
+        <section class="input-field">
+          <input id="cityName" type="text" placeholder="City Name"></input>
+          <!-- <label for="cityName"> City Name</label> -->
+          <button class="search-btn">Search</button>
+          <div id="buttons"></div>
+        </form>
+      </div>
+    </section>
+    <article id="about">
+      <h2>About</h2>
+      <p>Text goes here</p>
+    </article>
+    <div id="#amadeus-api"></div>
+    
+  </body>
+</html>
+
     <!--------------------------------MAIN SECTION-------------------------------->
     <!--------------------------------SEARCH FORM-------------------------------->
     <form id="search">
@@ -97,9 +197,13 @@
 
      <!--------------------FOOTER-------------------->
      <footer class="footer-slogan">don't go with the flow | est. 2023</footer>
+<!--------------------MATERIALIZE-------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 
   <!--JS LINK-->
   <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
+
