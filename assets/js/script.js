@@ -45,31 +45,29 @@ function getNewToken() {
     });
 }
 
-// var submitBtn = document.getElementById("submit");
-// submitBtn.addEventListener("click", function () {
-//   var tokenInput = document.getElementById("token-input");
-//   accessToken = tokenInput.value;
-// });
-
-// Function to automatically renew the token
-// function renewToken() {
-//   if (isTokenExpired()) {
-//     getNewToken();
-//   }
-
-//   // Schedule the next token renewal
-//   setTimeout(renewToken, 30 * 60 * 1000);
-// }
-
-// Start the token renewal process
-
-// make a new request
+// Function to make the initial API request and generate the token
 function makeAPIRequest() {
   // Check if the token is expired and renew it if needed
   if (isTokenExpired()) {
     getNewToken();
   }
 }
+
+// Call makeAPIRequest to generate the token when the page is opened
+makeAPIRequest();
+
+// Function to automatically renew the token
+function renewToken() {
+  if (isTokenExpired()) {
+    getNewToken();
+  }
+
+  // Schedule the next token renewal
+  //   setTimeout(renewToken, 30 * 60 * 1000); // 30 minutes in milliseconds
+}
+
+// Start the token renewal process
+renewToken();
 
 // -------------------------------------------- SELECTORS---------------------------------------------------------//
 var searchBtn = document.querySelector(".search-btn");
