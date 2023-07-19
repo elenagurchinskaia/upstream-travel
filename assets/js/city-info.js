@@ -229,7 +229,7 @@ function sightsOptions() {
     .then((response) => response.json())
     .then((result) => console.log("Excursions: ", result))
     .catch((error) => console.log("error", error));
-}
+};
 
 //   fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
 //     .then(response => response.json())
@@ -262,6 +262,14 @@ safetyStats();
 foodOptions();
 sightsOptions();
 // toursOptions();
+
+// -------------------------------------------- SIDE NAV ---------------------------------------------------------//
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems);
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
