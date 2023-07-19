@@ -27,15 +27,12 @@ function cityMap() {
     city.cityName.replace(" ", "%20");
   console.log(source);
   mapEl.setAttribute("src", source);
-
-};
-
+}
 
 // -------------------------------------------- SAFETY STATS ---------------------------------------------------------//
 
 function safetyStats() {
   var myHeaders = new Headers();
-
 
   myHeaders.append("Authorization", "Bearer s7PyIBjjKR4UMRjETI8g7xwI4hnS");
 
@@ -44,7 +41,6 @@ function safetyStats() {
     headers: myHeaders,
     redirect: "follow",
   };
-
 
   fetch(
     "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" +
@@ -82,8 +78,7 @@ function safetyStats() {
 
       // //----------MEDICAL SCORE----------//
 
-
-      var medicalScore = document.getElementById('medicalScore');
+      var medicalScore = document.getElementById("medicalScore");
 
       medicalScore.textContent = medicalNum;
       console.log(medicalNum);
@@ -109,7 +104,7 @@ function safetyStats() {
       console.log(womenNum);
     })
     .catch((error) => console.log("error", error));
-};
+}
 
 // -------------------------------------------- FOOD ---------------------------------------------------------//
 
@@ -141,13 +136,13 @@ function foodOptions() {
         var foodRating = foodData.rank + "/5 STARS";
 
         //----------FOOD OPTIONS----------//
-        var foodOptions = document.getElementById("foodOpt" + (i+1));
+        var foodOptions = document.getElementById("foodOpt" + (i + 1));
         foodOptions.textContent = type + " " + foodName + " " + foodRating;
         console.log(type + " " + foodName + " " + foodRating);
       }
     })
     .catch((error) => console.log("error", error));
-};
+}
 
 // -------------------------------------------- PLACES OF INTEREST ---------------------------------------------------------//
 
@@ -161,13 +156,18 @@ function sightsOptions() {
     redirect: "follow",
   };
 
-
-  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
-    .then(response => response.json())
-    .then(result => console.log('Places of Interest: ', result))
-    .catch(error => console.log('error', error));
-};
-
+  fetch(
+    "https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" +
+      lat +
+      "&longitude=" +
+      lon +
+      "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => console.log("Places of Interest: ", result))
+    .catch((error) => console.log("error", error));
+}
 
 // -------------------------------------------- EXCURSIONS ---------------------------------------------------------//
 
@@ -181,12 +181,18 @@ function toursOptions() {
     redirect: "follow",
   };
 
-  fetch("https://test.api.amadeus.com/v1/shopping/activities?latitude=" + lat + "&longitude=" + lon + "&radius=15", requestOptions)
-    .then(response => response.json())
-    .then(result => console.log('Excursions: ', result))
-    .catch(error => console.log('error', error));
-};
-
+  fetch(
+    "https://test.api.amadeus.com/v1/shopping/activities?latitude=" +
+      lat +
+      "&longitude=" +
+      lon +
+      "&radius=15",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => console.log("Excursions: ", result))
+    .catch((error) => console.log("error", error));
+}
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
@@ -195,3 +201,8 @@ safetyStats();
 foodOptions();
 // sightsOptions();
 // toursOptions();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems);
+});

@@ -36,24 +36,31 @@ function getNewToken() {
       accessToken = data.access_token;
       expirationTime = Math.floor(Date.now() / 1000) + data.expires_in;
       console.log("New token obtained:", accessToken);
+      // var token = document.getElementById("token");
+      // token.textContent = accessToken;
     })
     .catch((error) => {
       console.error("Error fetching new token:", error);
     });
 }
 
-// Function to automatically renew the token
-function renewToken() {
-  if (isTokenExpired()) {
-    getNewToken();
-  }
+// var submitBtn = document.getElementById("submit");
+// submitBtn.addEventListener("click", function () {
+//   var tokenInput = document.getElementById("token-input");
+//   accessToken = tokenInput.value;
+// });
 
-  // Schedule the next token renewal
-  setTimeout(renewToken, 30 * 60 * 1000);
-}
+// Function to automatically renew the token
+// function renewToken() {
+//   if (isTokenExpired()) {
+//     getNewToken();
+//   }
+
+//   // Schedule the next token renewal
+//   setTimeout(renewToken, 30 * 60 * 1000);
+// }
 
 // Start the token renewal process
-renewToken();
 
 // make a new request
 function makeAPIRequest() {
@@ -63,8 +70,6 @@ function makeAPIRequest() {
   }
 }
 
-makeAPIRequest();
-
 // -------------------------------------------- SELECTORS---------------------------------------------------------//
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
@@ -72,7 +77,7 @@ var buttonContainer = document.getElementById("buttons");
 // -------------------------------------------- GETS CITY INPUT DATA ---------------------------------------------------------//
 var myHeaders = new Headers();
 
-myHeaders.append("Authorization", "Bearer uNVrOG2kQtzWA8VBdTjors1PN1xk");
+myHeaders.append("Authorization", "Bearer " + accessToken);
 
 var requestOptions = {
   method: "GET",
@@ -82,7 +87,7 @@ var requestOptions = {
 
 function getCityInfo(event) {
   event.preventDefault();
-
+  console.log(accessToken);
   var city = document
     .getElementById("cityName")
     .value.trim()
@@ -148,16 +153,15 @@ function createCityButton(
 
   buttonContainer.appendChild(cityBtn);
 }
-// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
-
-searchBtn.addEventListener("click", getCityInfo);
-
+// renewToken();
+makeAPIRequest();
 // -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
-  var instance = M.Sidenav.init(elems, options);
-  instance.open();
-  instance.close();
-  instance.destroy();
+  var instances = M.Sidenav.init(elems);
 });
+
+// -------------------------------------------- SAVES COORDINATES & REDIRECTS USER ---------------------------------------------------------//
+
+searchBtn.addEventListener("click", getCityInfo);
