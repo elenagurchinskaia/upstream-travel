@@ -20,7 +20,6 @@ var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
 
 var myHeaders = new Headers();
 
-
 myHeaders.append("Authorization", "Bearer" + token);
 
 var requestOptions = {
@@ -32,11 +31,18 @@ var requestOptions = {
 function getCityInfo(event) {
   event.preventDefault();
 
-  var city = document.getElementById("cityName").value.trim().replace(" ", "%20");
+  var city = document
+    .getElementById("cityName")
+    .value.trim()
+    .replace(" ", "%20");
   console.log(city);
 
   fetch(
-    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" + city + "&max=5", requestOptions)
+    "https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=" +
+      city +
+      "&max=5",
+    requestOptions
+  )
     .then((response) => response.json())
     .then((result) => {
       console.log(result.data);
@@ -50,7 +56,8 @@ function getCityInfo(event) {
         var cityName = cityData.name;
         var stateCode = cityData.address.stateCode;
         var countryCode = cityData.address.countryCode;
-        var cityKey = cityName + ", " + stateCode + "; " + countryCode;
+        var latitude = cityData.geoCode.latitude;
+        var longitude = cityData.geoCode.longitude;
 
         // -------------------------------------------- CREATES CITY OPTION BUTTONS ---------------------------------------------------------//
 
