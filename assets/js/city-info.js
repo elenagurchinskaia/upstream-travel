@@ -1,7 +1,7 @@
 // ------------------------- SELECTORS -------------------------//
 var mapEl = document.getElementById("google-map");
 
-var token = "I8a1tJYPt6bZDzNuDlG5lTWLa9QN"
+var token = "z6jRGqsaGE4jZGAiD4tmAiR2NA5s"
 
 // ------------------------- CITY COORDINATES -------------------------//
 
@@ -39,7 +39,7 @@ function safetyStats() {
   var myHeaders = new Headers();
 
 
-  myHeaders.append("Authorization", "Bearer" + token);
+  myHeaders.append("Authorization", "Bearer " + token);
 
   var requestOptions = {
     method: "GET",
@@ -117,7 +117,7 @@ function safetyStats() {
 
 function foodOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer" + token);
+  myHeaders.append("Authorization", "Bearer " + token);
 
   var requestOptions = {
     method: "GET",
@@ -155,7 +155,7 @@ function foodOptions() {
 
 function sightsOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer Am2PSpEYPR35m7ojVyQ4EP9swTa6");
+  myHeaders.append("Authorization", "Bearer " + token);
 
   var requestOptions = {
     method: "GET",
@@ -164,10 +164,27 @@ function sightsOptions() {
   };
 
 
-  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=15&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
+  fetch("https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=" + lat + "&longitude=" + lon + "&radius=20&page%5Blimit%5D=4&page%5Boffset%5D=0&categories=SIGHTS", requestOptions)
     .then(response => response.json())
-    .then(result => console.log('Places of Interest: ', result))
-    .catch(error => console.log('error', error));
+    .then((result) => {
+      console.log("Sights:");
+      console.log(result);
+
+      for (var i = 0; i < result.data.length; i++) {
+        var poiData = result.data[i];
+        console.log("Sights Data: " + poiData);
+
+        var type = poiData.category + ": ";
+        var poiName = poiData.name;
+        var poiRating = poiData.rank + "/5 STARS";
+
+        //----------SIGHT OPTIONS----------//
+        var poiOptions = document.getElementById("poiOpt" + (i+1));
+        poiOptions.textContent = type + " " + poiName + " " + poiRating;
+        console.log(type + " " + poiName + " " + poiRating);
+      }
+    })
+    .catch((error) => console.log("error", error));
 };
 
 
@@ -175,7 +192,7 @@ function sightsOptions() {
 
 function toursOptions() {
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer" + token);
+  myHeaders.append("Authorization", "Bearer " + token);
 
   var requestOptions = {
     method: "GET",
@@ -195,5 +212,5 @@ function toursOptions() {
 cityMap();
 safetyStats();
 foodOptions();
-// sightsOptions();
+sightsOptions();
 // toursOptions();
