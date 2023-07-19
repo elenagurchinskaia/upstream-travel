@@ -1,7 +1,7 @@
 // ------------------------- SELECTORS -------------------------//
 var mapEl = document.getElementById("google-map");
 
-var token = "z6jRGqsaGE4jZGAiD4tmAiR2NA5s"
+var token = "C5zeitZ0oo1GSsV9zMBq4yxFegmX"
 
 // ------------------------- CITY COORDINATES -------------------------//
 
@@ -22,14 +22,9 @@ var APIkey = "AIzaSyBdXT-Im1q-WtbYM6fqm32GLH_ZVCbt2M4";
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
 function cityMap() {
-  var source =
-    "https://www.google.com/maps/embed/v1/place?key=" +
-    APIkey +
-    "&q=" +
-    city.cityName.replace(" ", "%20");
+  var source = "https://www.google.com/maps/embed/v1/place?key=" + APIkey + "&q=" + city.cityName.replace(" ", "%20");
   console.log(source);
   mapEl.setAttribute("src", source);
-
 };
 
 
@@ -37,8 +32,6 @@ function cityMap() {
 
 function safetyStats() {
   var myHeaders = new Headers();
-
-
   myHeaders.append("Authorization", "Bearer " + token);
 
   var requestOptions = {
@@ -48,18 +41,10 @@ function safetyStats() {
   };
 
 
-  fetch(
-    "https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" +
-      lat +
-      "&longitude=-" +
-      lon +
-      "&page%5Blimit%5D=1&page%5Boffset%5D=0",
-    requestOptions
-  )
+  fetch("https://test.api.amadeus.com/v1/safety/safety-rated-locations?latitude=" + lat + "&longitude=-" + lon + "&page%5Blimit%5D=1&page%5Boffset%5D=0", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log("Safety Stats: ");
-
       console.log(result);
 
       var safetyData = result.data[0].safetyScores;
@@ -67,8 +52,7 @@ function safetyStats() {
       var lgbtqNum = "LGBTQ+: " + safetyData.lgbtq;
       var medicalNum = "Medical: " + safetyData.medical;
       var physicalHarmNum = "Physical Harm: " + safetyData.physicalHarm;
-      var politicalFreedomNum =
-        "Political Freedom: " + safetyData.politicalFreedom;
+      var politicalFreedomNum = "Political Freedom: " + safetyData.politicalFreedom;
       var theftNum = "Theft: " + safetyData.theft;
       var womenNum = "Women's Safety: " + safetyData.women;
 
@@ -83,10 +67,7 @@ function safetyStats() {
       console.log(lgbtqNum);
 
       // //----------MEDICAL SCORE----------//
-
-
       var medicalScore = document.getElementById('medicalScore');
-
       medicalScore.textContent = medicalNum;
       console.log(medicalNum);
 
