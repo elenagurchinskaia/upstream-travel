@@ -2,11 +2,11 @@
 var mapEl = document.getElementById("google-map");
 
 // var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g";
-var token = sessionStorage.getItem("accessToken") || "";
+var token = localStorage.getItem("accessToken") || "";
 
 // ------------------------- CITY COORDINATES -------------------------//
 
-var city = JSON.parse(sessionStorage.getItem("selectedCity"));
+var city = JSON.parse(localStorage.getItem("selectedCity"));
 console.log("City:");
 console.log(city.cityName);
 
@@ -25,9 +25,9 @@ var APIkey = "AIzaSyBJd33gFzJ2eKB-LQrliZ618oQj5MnBoj8";
 var header = city.cityName;
 
 function attachCity() {
-  var name = document.getElementById('city-name');
+  var name = document.getElementById("city-name");
   name.textContent = header;
-};
+}
 
 // -------------------------------------------- MAP ---------------------------------------------------------//
 

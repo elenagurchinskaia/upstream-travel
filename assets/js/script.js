@@ -17,7 +17,7 @@ var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
 // -------------------------------------------- DYNAMICALLY GENERATE TOKEN ---------------------------------------------------------//
-var accessToken = sessionStorage.getItem("accessToken") || ""; // Store the access token in session storage
+var accessToken = localStorage.getItem("accessToken") || ""; // Store the access token in session storage
 var expirationTime = 0; // Store the expiration time
 
 // Function to check if the token has expired
@@ -41,7 +41,7 @@ async function getNewToken() {
     );
     var data = await response.json();
     accessToken = data.access_token;
-    sessionStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("accessToken", accessToken);
     expirationTime = Math.floor(Date.now() / 1000) + data.expires_in;
     console.log("New token obtained:", accessToken);
     return accessToken;
