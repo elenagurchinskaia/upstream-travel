@@ -28,6 +28,22 @@ Current travel apps return only the most popular or highest rated places. Upstre
 | Postman         | [https://www.postman.com/](https://www.postman.com/)              |
 | Amadeus         | [https://developers.amadeus.com/](https://developers.amadeus.com) |
 | Google          | [https://developers.google.com/](https://developers.google.com/)  |
+| Three.js        | [https://threejs.org/](https://threejs.org/)                      |
+
+<br>
+
+**3D Global Model**
+<br>
+Model Information:
+* title:	EARTH
+* source:	[Source URL](https://sketchfab.com/3d-models/earth-5ce4b1465c83432d9bb7e3c30232c02b)
+* author:	[Stéphane Agullo](https://sketchfab.com/sa3d)
+
+Model License:
+* license type:	[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+This work is based on ["EARTH"](https://sketchfab.com/3d-models/earth-5ce4b1465c83432d9bb7e3c30232c02b) by [Stéphane Agullo](https://sketchfab.com/sa3d) licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)
 
 <br>
 
