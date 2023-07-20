@@ -30,6 +30,8 @@
   <!--Materialize Library-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
+  <!--Three.js Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
 
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -97,7 +99,8 @@
       places to eat at and explore by filtering results through the lens of a local resident for food and destinations
       and give you a feel for the adventures you might have with a music track chosen for a vibe check.
     </p>
-    <img src="./assets/images/travel-img.jpeg" class="travel-img" alt="canoe in lake">
+    <div id="globe-container"></div>
+    <!-- <img src="./assets/images/travel-img.jpeg" class="travel-img" alt="canoe in lake"> -->
   </article>
 
   
@@ -108,6 +111,56 @@
   <!--------------------MATERIALIZE-------------------->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   
+  <!--THREE.JS LINK-->
+  <script>
+    // Get the container element
+    const globeContainer = document.getElementById('globe-container');
+
+    // Set up the Three.js scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+
+    // Set the background color to black (change to desired color in hexadecimal format)
+    renderer.setClearColor(0xecc8af);
+
+    globeContainer.appendChild(renderer.domElement);
+
+    // Create the Earth geometry and material
+    const geometry = new THREE.SphereGeometry(2, 32, 32); // Make the globe radius 2 units
+    const texture = new THREE.TextureLoader().load('TERRE_baseColor.jpeg'); // Replace with the path to your Earth texture image
+    const material = new THREE.MeshPhongMaterial({ map: texture }); // Use MeshPhongMaterial with lighting
+
+    // Create the Earth mesh and add it to the scene
+    const earth = new THREE.Mesh(geometry, material);
+    scene.add(earth);
+
+    // Create a directional light source
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 5, 5).normalize();
+    scene.add(light);
+
+    // Position the camera to view the Earth
+    camera.position.z = 6; // Move the camera back to view the larger Earth
+
+    // Function to animate the rotation of the Earth
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Rotate the Earth on its y-axis
+      if (scene.children.length > 0) {
+        const earth = scene.children[0];
+        earth.rotation.y += 0.005;
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    // Call the animate function to start the rotation
+    animate();
+  </script>
+
   <!--JS LINK-->
   <script src="./assets/js/script.js"></script>
 </body>
