@@ -16,16 +16,17 @@
 var searchBtn = document.querySelector(".search-btn");
 var buttonContainer = document.getElementById("buttons");
 
-// -------------------------------------------- UPDATE THE TOKEN AUTOMATICALLY ---------------------------------------------------------//
-var accessToken = sessionStorage.getItem("accessToken") || ""; // Store the access token
+// -------------------------------------------- DYNAMICALLY GENERATE TOKEN ---------------------------------------------------------//
+var accessToken = sessionStorage.getItem("accessToken") || ""; // Store the access token in session storage
 var expirationTime = 0; // Store the expiration time
 
 // Function to check if the token has expired
 function isTokenExpired() {
-  var currentTime = Math.floor(Date.now() / 1000); // Get the current time in seconds
+  var currentTime = Math.floor(Date.now() / 1000);
   return currentTime >= expirationTime;
 }
 
+// Function to get a new token
 async function getNewToken() {
   try {
     var response = await fetch(
@@ -51,7 +52,7 @@ async function getNewToken() {
 }
 
 var myHeaders = new Headers();
-// Function to make the initial API request and generate the token
+// function to make the initial API request and generate the token
 async function makeAPIRequest() {
   // Check if the token is expired and renew it if needed
   if (isTokenExpired()) {
