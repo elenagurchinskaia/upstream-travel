@@ -14,10 +14,10 @@ Current travel apps return only the most popular or highest rated places. Upstre
 
 - HTML - used to edit the existing elements.
 - CSS - used to edit the styling for the html elements.
-- JavaScript - used to add functionailty and logic to the application.
+- JavaScript - used to add functionality and logic to the application.
 - Git - used to track edits made to the source code.
 - GitHub - used to host and deploy the repository.
-- Amadeus for Developers - used to get API.
+- Amadeus for Developers - used to get safety and travel data API.
 - Google Maps - used to get the map API.
 
 <br>
@@ -31,9 +31,22 @@ Current travel apps return only the most popular or highest rated places. Upstre
 
 <br>
 
+## User Stories 
+- main user story
+
+- API user story
+
+## Materialize CSS Framework
+
+![See how our site looks on mobile](./assets/videos/video-responsive.mp4)
+
 ## Learning points
 
-learning points
+We learned and had a lot of fun with this project. A few learning moments stand out
+- How long it takes to set up and call a new API's depends on the documentation
+- Determine what the costs and abilities of an API before committing to it
+- Always check within what scope variables and functions are placed
+- Be aware of timing for API fetch calls and event listeners 
 
 <br>
 
@@ -55,6 +68,8 @@ Website URL: [Upstream Travel](https://elenagurchinskaia.github.io/upstream-trav
 <br>
 
 ### Stephanie Lenorovitz
+
+_Currently a student in the UC Berkley Full Stack Flex Bootcamp.
 
 - [LinkedIn](https://www.linkedin.com/in/goodux/)
 - [Github](https://github.com/GypsyBoho)
