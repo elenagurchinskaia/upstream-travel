@@ -16,6 +16,7 @@ See how our site functions
   Your browser does not support the video tag.
 </video>
 
+<br>
 
 See how our site looks on mobile
 
