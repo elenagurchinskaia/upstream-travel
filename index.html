@@ -129,7 +129,7 @@
 
     // Create the Earth geometry and material
     const geometry = new THREE.SphereGeometry(2, 32, 32); // Make the globe radius 2 units
-    const texture = new THREE.TextureLoader().load('TERRE_baseColor.jpeg'); // Replace with the path to your Earth texture image
+    const texture = new THREE.TextureLoader().load('./assets/images/TERRE_baseColor.jpeg'); // Replace with the path to your Earth texture image
     const material = new THREE.MeshPhongMaterial({ map: texture }); // Use MeshPhongMaterial with lighting
 
     // Create the Earth mesh and add it to the scene
