@@ -2,11 +2,11 @@
 var mapEl = document.getElementById("google-map");
 
 // var token = "uwcS0V1NXILFUpFJ2Rvzy30AJR6g";
-var token = localStorage.getItem("accessToken") || "";
+var token = sessionStorage.getItem("accessToken") || "";
 
 // ------------------------- CITY COORDINATES -------------------------//
 
-var city = JSON.parse(localStorage.getItem("selectedCity"));
+var city = JSON.parse(sessionStorage.getItem("selectedCity"));
 console.log("City:");
 console.log(city.cityName);
 
@@ -18,7 +18,7 @@ console.log(city.longitude);
 
 var lat = city.latitude;
 var lon = city.longitude;
-var APIkey = "AIzaSyBdXT-Im1q-WtbYM6fqm32GLH_ZVCbt2M4";
+var APIkey = "AIzaSyBJd33gFzJ2eKB-LQrliZ618oQj5MnBoj8";
 
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
@@ -259,11 +259,6 @@ sightsOptions();
 // toursOptions();
 
 // -------------------------------------------- SIDE NAV ---------------------------------------------------------//
-
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".sidenav");
-  var instances = M.Sidenav.init(elems);
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".sidenav");
