@@ -20,6 +20,15 @@ var lat = city.latitude;
 var lon = city.longitude;
 var APIkey = "AIzaSyBdXT-Im1q-WtbYM6fqm32GLH_ZVCbt2M4";
 
+// -------------------------------------------- CITY NAME ---------------------------------------------------------//
+
+var header = city.cityName;
+
+function attachCity() {
+  var name = document.getElementById('city-name');
+  name.textContent = header;
+};
+
 // -------------------------------------------- MAP ---------------------------------------------------------//
 
 function cityMap() {
@@ -252,6 +261,7 @@ function toursOptions() {
 
 // ------------------------------------ CALLING THE FUNCTIONS ------------------------------------//
 
+attachCity();
 cityMap();
 safetyStats();
 foodOptions();
